@@ -1,5 +1,5 @@
-const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/universal-narrator-D55Th27_.js","assets/main-DaT4__Z1.js"])))=>i.map(i=>d[i]);
-import{E as p,_ as P}from"./main-DaT4__Z1.js";class B{constructor(e={}){var t,i,s,r,n,o,a,l,d,c,g,h,v,b,m,f,x,y,w,k,S,C,L,z,E;this.meta={id:e.id||"",title:e.title||"",examType:((t=e.meta)==null?void 0:t.examType)||"DS_MID",difficulty:((i=e.meta)==null?void 0:i.difficulty)||"Medium",tags:((s=e.meta)==null?void 0:s.tags)||[]},this.pedagogy={question:((r=e.pedagogy)==null?void 0:r.question)||e.problem||"",breakdown:((n=e.pedagogy)==null?void 0:n.breakdown)||e.breakdown||[],key_mapping:((o=e.pedagogy)==null?void 0:o.key_mapping)||e.keyDetails||{},concept_selection:{selected:((l=(a=e.pedagogy)==null?void 0:a.concept_selection)==null?void 0:l.selected)||e.baseAlgorithm||"",reason:((c=(d=e.pedagogy)==null?void 0:d.concept_selection)==null?void 0:c.reason)||""},structural_plan:{default_algo:((h=(g=e.pedagogy)==null?void 0:g.structural_plan)==null?void 0:h.default_algo)||e.baseAlgorithm||"",modifications:((b=(v=e.pedagogy)==null?void 0:v.structural_plan)==null?void 0:b.modifications)||e.modifications||[]}},this.simulation={narrative_steps:((m=e.simulation)==null?void 0:m.narrative_steps)||e.narrativeSteps||[],sample_io:{input:((x=(f=e.simulation)==null?void 0:f.sample_io)==null?void 0:x.input)||"",expected_output:((w=(y=e.simulation)==null?void 0:y.sample_io)==null?void 0:w.expected_output)||e.expectedOutput||""},key_takeaways:((k=e.simulation)==null?void 0:k.key_takeaways)||e.keyTakeaways||[]},this.code={java:((S=e.code)==null?void 0:S.java)||e.javaCode||"",python:((C=e.code)==null?void 0:C.python)||e.pythonCode||"",javascript:((L=e.code)==null?void 0:L.javascript)||e.jsCode||""},this.visualizer={type:((z=e.visualizer)==null?void 0:z.type)||e.visualType||"none",initialState:((E=e.visualizer)==null?void 0:E.initialState)||null}}validate(){const e=[];return this.meta.id||e.push("Missing solution ID"),this.pedagogy.question||e.push("Missing question text"),this.pedagogy.breakdown.length===0&&e.push("Missing breakdown steps"),{isValid:e.length===0,errors:e}}getCode(e="java"){return this.code[e]||""}}const I=`
+const __vite__mapDeps = (i, m = __vite__mapDeps, d = (m.f || (m.f = ["assets/universal-narrator-D55Th27_.js", "assets/main-DaT4__Z1.js"]))) => i.map(i => d[i]);
+import { E as p, _ as P } from "./main-DaT4__Z1.js"; class B { constructor(e = {}) { var t, i, s, r, n, o, a, l, d, c, g, h, v, b, m, f, x, y, w, k, S, C, L, z, E; this.meta = { id: e.id || "", title: e.title || "", examType: ((t = e.meta) == null ? void 0 : t.examType) || "DS_MID", difficulty: ((i = e.meta) == null ? void 0 : i.difficulty) || "Medium", tags: ((s = e.meta) == null ? void 0 : s.tags) || [] }, this.pedagogy = { question: ((r = e.pedagogy) == null ? void 0 : r.question) || e.problem || "", breakdown: ((n = e.pedagogy) == null ? void 0 : n.breakdown) || e.breakdown || [], key_mapping: ((o = e.pedagogy) == null ? void 0 : o.key_mapping) || e.keyDetails || {}, concept_selection: { selected: ((l = (a = e.pedagogy) == null ? void 0 : a.concept_selection) == null ? void 0 : l.selected) || e.baseAlgorithm || "", reason: ((c = (d = e.pedagogy) == null ? void 0 : d.concept_selection) == null ? void 0 : c.reason) || "" }, structural_plan: { default_algo: ((h = (g = e.pedagogy) == null ? void 0 : g.structural_plan) == null ? void 0 : h.default_algo) || e.baseAlgorithm || "", modifications: ((b = (v = e.pedagogy) == null ? void 0 : v.structural_plan) == null ? void 0 : b.modifications) || e.modifications || [] } }, this.simulation = { narrative_steps: ((m = e.simulation) == null ? void 0 : m.narrative_steps) || e.narrativeSteps || [], sample_io: { input: ((x = (f = e.simulation) == null ? void 0 : f.sample_io) == null ? void 0 : x.input) || "", expected_output: ((w = (y = e.simulation) == null ? void 0 : y.sample_io) == null ? void 0 : w.expected_output) || e.expectedOutput || "" }, key_takeaways: ((k = e.simulation) == null ? void 0 : k.key_takeaways) || e.keyTakeaways || [] }, this.code = { cpp: ((S = e.code) == null ? void 0 : S.cpp) || e.cppCode || "", java: ((S = e.code) == null ? void 0 : S.java) || e.javaCode || "", python: ((C = e.code) == null ? void 0 : C.python) || e.pythonCode || "", javascript: ((L = e.code) == null ? void 0 : L.javascript) || e.jsCode || "" }, this.visualizer = { type: ((z = e.visualizer) == null ? void 0 : z.type) || e.visualType || "none", initialState: ((E = e.visualizer) == null ? void 0 : E.initialState) || null } } validate() { const e = []; return this.meta.id || e.push("Missing solution ID"), this.pedagogy.question || e.push("Missing question text"), this.pedagogy.breakdown.length === 0 && e.push("Missing breakdown steps"), { isValid: e.length === 0, errors: e } } getCode(e = "cpp") { return this.code[e] || "" } } const I = `
 <style id="deep-dive-styles">
     .deep-dive-card {
         background: var(--bg-secondary);
@@ -274,20 +274,23 @@ import{E as p,_ as P}from"./main-DaT4__Z1.js";class B{constructor(e={}){var t,i,
         }
     }
 </style>
-`;typeof document<"u"&&!document.getElementById("deep-dive-styles")&&document.head.insertAdjacentHTML("beforeend",I);class j{constructor(e={}){this.narrativeSteps=[],this.currentStepIndex=0,this.isPlaying=!1,this.isPaused=!1,this.codeContainer=e.codeContainer||null,this.visualizerContainer=e.visualizerContainer||null,this.controlsContainer=e.controlsContainer||null,this.codeLines=e.codeLines||[],this.currentLang=e.lang||"java",this.onStepChange=e.onStepChange||null,this.onComplete=e.onComplete||null,this.onPlay=e.onPlay||null,this.onPause=e.onPause||null,p.voice||p.init()}load(e,t=[]){this.narrativeSteps=e||[],this.codeLines=t,this.currentStepIndex=0,this.isPlaying=!1,this.isPaused=!1,this.renderControls(),this.renderCodeView(),this.renderVisualizerView()}play(){this.narrativeSteps.length!==0&&(p.unlock(),this.isPlaying=!0,this.isPaused=!1,this.onPlay&&this.onPlay(),this.updateControlsUI(),this.executeCurrentStep())}pause(){this.isPlaying=!1,this.isPaused=!0,p.stop(),this.onPause&&this.onPause(),this.updateControlsUI()}togglePlayPause(){this.isPlaying?this.pause():this.play()}nextStep(){this.currentStepIndex<this.narrativeSteps.length-1&&(p.stop(),this.currentStepIndex++,this.isPlaying?this.executeCurrentStep():this.showStep(this.currentStepIndex))}prevStep(){this.currentStepIndex>0&&(p.stop(),this.currentStepIndex--,this.isPlaying?this.executeCurrentStep():this.showStep(this.currentStepIndex))}reset(){this.pause(),this.currentStepIndex=0,this.showStep(0),this.updateControlsUI()}executeCurrentStep(){const e=this.narrativeSteps[this.currentStepIndex];if(!e){this.onNarrativeComplete();return}this.showStep(this.currentStepIndex),p.speak(e.text,()=>{this.isPlaying&&!this.isPaused&&(this.currentStepIndex<this.narrativeSteps.length-1?(this.currentStepIndex++,this.executeCurrentStep()):this.onNarrativeComplete())})}showStep(e){const t=this.narrativeSteps[e];t&&(this.highlightCodeLine(t.codeLine,t.action),this.showVisualizerAction(t),this.updateProgress(),this.onStepChange&&this.onStepChange(t,e,this.narrativeSteps.length))}onNarrativeComplete(){this.isPlaying=!1,this.isPaused=!1,this.updateControlsUI(),this.onComplete&&this.onComplete()}highlightCodeLine(e,t="highlight"){if(!this.codeContainer)return;const i=this.codeContainer.querySelectorAll(".nc-code-line");if(i.forEach(s=>{s.classList.remove("nc-highlight","nc-whatif","nc-intro","nc-conclusion")}),e&&e>0&&e<=i.length){const s=i[e-1];switch(t){case"whatif":s.classList.add("nc-whatif");break;case"intro":case"conclusion":s.classList.add("nc-"+t);break;default:s.classList.add("nc-highlight")}s.scrollIntoView({behavior:"smooth",block:"center"})}}showVisualizerAction(e){if(!this.visualizerContainer)return;const i={intro:"🎬",highlight:"🔦",formula:"📐",whatif:"⚠️",analysis:"🔍",conclusion:"✅",result:"🏆",divide:"✂️",conquer:"🔗",combine:"🧩",trace:"📊",warning:"⚠️",question:"❓"}[e.action]||"💡",s=e.action==="whatif";this.visualizerContainer.innerHTML=`
-            <div class="nc-action-display ${s?"nc-whatif-action":""}">
+`; typeof document < "u" && !document.getElementById("deep-dive-styles") && document.head.insertAdjacentHTML("beforeend", I); class j {
+    constructor(e = {}) { this.narrativeSteps = [], this.currentStepIndex = 0, this.isPlaying = !1, this.isPaused = !1, this.codeContainer = e.codeContainer || null, this.visualizerContainer = e.visualizerContainer || null, this.controlsContainer = e.controlsContainer || null, this.codeLines = e.codeLines || [], this.currentLang = e.lang || "java", this.onStepChange = e.onStepChange || null, this.onComplete = e.onComplete || null, this.onPlay = e.onPlay || null, this.onPause = e.onPause || null, p.voice || p.init() } load(e, t = []) { this.narrativeSteps = e || [], this.codeLines = t, this.currentStepIndex = 0, this.isPlaying = !1, this.isPaused = !1, this.renderControls(), this.renderCodeView(), this.renderVisualizerView() } play() { this.narrativeSteps.length !== 0 && (p.unlock(), this.isPlaying = !0, this.isPaused = !1, this.onPlay && this.onPlay(), this.updateControlsUI(), this.executeCurrentStep()) } pause() { this.isPlaying = !1, this.isPaused = !0, p.stop(), this.onPause && this.onPause(), this.updateControlsUI() } togglePlayPause() { this.isPlaying ? this.pause() : this.play() } nextStep() { this.currentStepIndex < this.narrativeSteps.length - 1 && (p.stop(), this.currentStepIndex++, this.isPlaying ? this.executeCurrentStep() : this.showStep(this.currentStepIndex)) } prevStep() { this.currentStepIndex > 0 && (p.stop(), this.currentStepIndex--, this.isPlaying ? this.executeCurrentStep() : this.showStep(this.currentStepIndex)) } reset() { this.pause(), this.currentStepIndex = 0, this.showStep(0), this.updateControlsUI() } executeCurrentStep() { const e = this.narrativeSteps[this.currentStepIndex]; if (!e) { this.onNarrativeComplete(); return } this.showStep(this.currentStepIndex), p.speak(e.text, () => { this.isPlaying && !this.isPaused && (this.currentStepIndex < this.narrativeSteps.length - 1 ? (this.currentStepIndex++, this.executeCurrentStep()) : this.onNarrativeComplete()) }) } showStep(e) { const t = this.narrativeSteps[e]; t && (this.highlightCodeLine(t.codeLine, t.action), this.showVisualizerAction(t), this.updateProgress(), this.onStepChange && this.onStepChange(t, e, this.narrativeSteps.length)) } onNarrativeComplete() { this.isPlaying = !1, this.isPaused = !1, this.updateControlsUI(), this.onComplete && this.onComplete() } highlightCodeLine(e, t = "highlight") { if (!this.codeContainer) return; const i = this.codeContainer.querySelectorAll(".nc-code-line"); if (i.forEach(s => { s.classList.remove("nc-highlight", "nc-whatif", "nc-intro", "nc-conclusion") }), e && e > 0 && e <= i.length) { const s = i[e - 1]; switch (t) { case "whatif": s.classList.add("nc-whatif"); break; case "intro": case "conclusion": s.classList.add("nc-" + t); break; default: s.classList.add("nc-highlight") }s.scrollIntoView({ behavior: "smooth", block: "center" }) } } showVisualizerAction(e) {
+        if (!this.visualizerContainer) return; const i = { intro: "🎬", highlight: "🔦", formula: "📐", whatif: "⚠️", analysis: "🔍", conclusion: "✅", result: "🏆", divide: "✂️", conquer: "🔗", combine: "🧩", trace: "📊", warning: "⚠️", question: "❓" }[e.action] || "💡", s = e.action === "whatif"; this.visualizerContainer.innerHTML = `
+            <div class="nc-action-display ${s ? "nc-whatif-action" : ""}">
                 <div class="nc-action-icon">${i}</div>
                 <div class="nc-action-text">${this.escapeHtml(e.text)}</div>
-                ${s?`
+                ${s ? `
                     <div class="nc-whatif-badge">
                         <span>⚠️</span> What If Scenario
                     </div>
-                `:""}
-                ${e.codeLine?`
+                `: ""}
+                ${e.codeLine ? `
                     <div class="nc-code-ref">Line ${e.codeLine}</div>
-                `:""}
+                `: ""}
             </div>
-        `}renderControls(){this.controlsContainer&&(this.controlsContainer.innerHTML=`
+        `} renderControls() {
+        this.controlsContainer && (this.controlsContainer.innerHTML = `
             <div class="nc-controls">
                 <div class="nc-progress-bar">
                     <div class="nc-progress-fill" style="width: 0%"></div>
@@ -310,7 +313,9 @@ import{E as p,_ as P}from"./main-DaT4__Z1.js";class B{constructor(e={}){var t,i,
                     Step <span class="nc-current-step">1</span> / <span class="nc-total-steps">${this.narrativeSteps.length}</span>
                 </div>
             </div>
-        `,this.bindControlEvents())}bindControlEvents(){if(!this.controlsContainer)return;const e=this.controlsContainer.querySelector(".nc-play-btn"),t=this.controlsContainer.querySelector(".nc-prev-btn"),i=this.controlsContainer.querySelector(".nc-next-btn"),s=this.controlsContainer.querySelector(".nc-reset-btn");e==null||e.addEventListener("click",()=>this.togglePlayPause()),t==null||t.addEventListener("click",()=>this.prevStep()),i==null||i.addEventListener("click",()=>this.nextStep()),s==null||s.addEventListener("click",()=>this.reset())}updateControlsUI(){if(!this.controlsContainer)return;const e=this.controlsContainer.querySelector(".nc-play-btn span");e&&(e.textContent=this.isPlaying?"⏸️":"▶️"),this.updateProgress()}updateProgress(){if(!this.controlsContainer)return;const e=this.controlsContainer.querySelector(".nc-progress-fill"),t=this.controlsContainer.querySelector(".nc-current-step"),i=this.controlsContainer.querySelector(".nc-total-steps");if(e){const s=(this.currentStepIndex+1)/this.narrativeSteps.length*100;e.style.width=`${s}%`}t&&(t.textContent=this.currentStepIndex+1),i&&(i.textContent=this.narrativeSteps.length)}renderCodeView(){!this.codeContainer||this.codeLines.length===0||(this.codeContainer.innerHTML=`
+        `, this.bindControlEvents())
+    } bindControlEvents() { if (!this.controlsContainer) return; const e = this.controlsContainer.querySelector(".nc-play-btn"), t = this.controlsContainer.querySelector(".nc-prev-btn"), i = this.controlsContainer.querySelector(".nc-next-btn"), s = this.controlsContainer.querySelector(".nc-reset-btn"); e == null || e.addEventListener("click", () => this.togglePlayPause()), t == null || t.addEventListener("click", () => this.prevStep()), i == null || i.addEventListener("click", () => this.nextStep()), s == null || s.addEventListener("click", () => this.reset()) } updateControlsUI() { if (!this.controlsContainer) return; const e = this.controlsContainer.querySelector(".nc-play-btn span"); e && (e.textContent = this.isPlaying ? "⏸️" : "▶️"), this.updateProgress() } updateProgress() { if (!this.controlsContainer) return; const e = this.controlsContainer.querySelector(".nc-progress-fill"), t = this.controlsContainer.querySelector(".nc-current-step"), i = this.controlsContainer.querySelector(".nc-total-steps"); if (e) { const s = (this.currentStepIndex + 1) / this.narrativeSteps.length * 100; e.style.width = `${s}%` } t && (t.textContent = this.currentStepIndex + 1), i && (i.textContent = this.narrativeSteps.length) } renderCodeView() {
+        !this.codeContainer || this.codeLines.length === 0 || (this.codeContainer.innerHTML = `
             <div class="nc-code-view">
                 <div class="nc-code-header">
                     <span class="nc-code-icon">💻</span>
@@ -318,16 +323,18 @@ import{E as p,_ as P}from"./main-DaT4__Z1.js";class B{constructor(e={}){var t,i,
                 </div>
                 <div class="nc-code-body">
                     <div class="nc-line-numbers">
-                        ${this.codeLines.map((e,t)=>`<div class="nc-line-num">${t+1}</div>`).join("")}
+                        ${this.codeLines.map((e, t) => `<div class="nc-line-num">${t + 1}</div>`).join("")}
                     </div>
                     <div class="nc-code-content">
-                        ${this.codeLines.map((e,t)=>`
-                            <div class="nc-code-line" data-line="${t+1}">${this.escapeHtml(e)}</div>
+                        ${this.codeLines.map((e, t) => `
+                            <div class="nc-code-line" data-line="${t + 1}">${this.escapeHtml(e)}</div>
                         `).join("")}
                     </div>
                 </div>
             </div>
-        `)}renderVisualizerView(){this.visualizerContainer&&(this.visualizerContainer.innerHTML=`
+        `)
+    } renderVisualizerView() {
+        this.visualizerContainer && (this.visualizerContainer.innerHTML = `
             <div class="nc-visualizer-view">
                 <div class="nc-visualizer-header">
                     <span class="nc-viz-icon">🎬</span>
@@ -338,8 +345,12 @@ import{E as p,_ as P}from"./main-DaT4__Z1.js";class B{constructor(e={}){var t,i,
                     <div class="nc-action-text">Click Play to start the narrative walkthrough</div>
                 </div>
             </div>
-        `)}escapeHtml(e){return e?e.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#039;"):""}static parseCodeLines(e){return e?e.split(`
-`).filter(t=>t.trim()!==""):[]}}const A=`
+        `)
+    } escapeHtml(e) { return e ? e.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;") : "" } static parseCodeLines(e) {
+        return e ? e.split(`
+`).filter(t => t.trim() !== "") : []
+    }
+} const A = `
 <style id="narrative-controller-styles">
 /* ═══════════════════════════════════════════════════════════════════════════
    NARRATIVE CONTROLLER - PHASE 3 STYLES
@@ -602,13 +613,17 @@ import{E as p,_ as P}from"./main-DaT4__Z1.js";class B{constructor(e={}){var t,i,
     }
 }
 </style>
-`;typeof document<"u"&&!document.getElementById("narrative-controller-styles")&&document.head.insertAdjacentHTML("beforeend",A);class _{constructor(){this.outputBuffer=[],this.startTime=null}start(){this.outputBuffer=[],this.startTime=Date.now()}bufferOutput(e){e&&this.outputBuffer.push(e)}validate(e){const t=this.outputBuffer.join(`
-`).trim(),i=(e||"").trim();return{success:t===i,actual:t,expected:i}}renderComparison(e,t,i){if(!e)return;const{success:s,actual:r,expected:n}=t,o=s?"#10b981":"#ef4444",d=`
+`; typeof document < "u" && !document.getElementById("narrative-controller-styles") && document.head.insertAdjacentHTML("beforeend", A); class _ {
+    constructor() { this.outputBuffer = [], this.startTime = null } start() { this.outputBuffer = [], this.startTime = Date.now() } bufferOutput(e) { e && this.outputBuffer.push(e) } validate(e) {
+        const t = this.outputBuffer.join(`
+`).trim(), i = (e || "").trim(); return { success: t === i, actual: t, expected: i }
+    } renderComparison(e, t, i) {
+        if (!e) return; const { success: s, actual: r, expected: n } = t, o = s ? "#10b981" : "#ef4444", d = `
             <div class="sv-validation-result fade-in" style="border-color: ${o}">
                 <div class="sv-validation-header" style="background: ${o}20; color: ${o}">
-                    <span class="icon">${s?"✨":"❌"}</span>
-                    <span class="title">${s?"Perfect Match!":"Output Mismatch"}</span>
-                    ${s?'<button class="sv-summary-btn" id="svShowSummaryBtn">📜 View Cheat Sheet</button>':""}
+                    <span class="icon">${s ? "✨" : "❌"}</span>
+                    <span class="title">${s ? "Perfect Match!" : "Output Mismatch"}</span>
+                    ${s ? '<button class="sv-summary-btn" id="svShowSummaryBtn">📜 View Cheat Sheet</button>' : ""}
                 </div>
                 <div class="sv-comparison-grid">
                     <div class="sv-output-box">
@@ -617,11 +632,13 @@ import{E as p,_ as P}from"./main-DaT4__Z1.js";class B{constructor(e={}){var t,i,
                     </div>
                     <div class="sv-output-box">
                         <div class="label">Your Output</div>
-                        <pre class="code-block ${s?"success":"error"}">${r}</pre>
+                        <pre class="code-block ${s ? "success" : "error"}">${r}</pre>
                     </div>
                 </div>
             </div>
-        `,c=document.createElement("div");if(c.innerHTML=d,e.appendChild(c),s){this.triggerSuccessEffect();const g=c.querySelector("#svShowSummaryBtn");g&&i&&g.addEventListener("click",()=>this.renderCheatSheet(i))}}renderCheatSheet(e){var n,o,a;const t=document.createElement("div");t.className="sv-modal-overlay fade-in";const i=((n=e.simulation)==null?void 0:n.key_takeaways)||[],s=((a=(o=e.pedagogy)==null?void 0:o.structural_plan)==null?void 0:a.modifications)||[];t.innerHTML=`
+        `, c = document.createElement("div"); if (c.innerHTML = d, e.appendChild(c), s) { this.triggerSuccessEffect(); const g = c.querySelector("#svShowSummaryBtn"); g && i && g.addEventListener("click", () => this.renderCheatSheet(i)) }
+    } renderCheatSheet(e) {
+        var n, o, a; const t = document.createElement("div"); t.className = "sv-modal-overlay fade-in"; const i = ((n = e.simulation) == null ? void 0 : n.key_takeaways) || [], s = ((a = (o = e.pedagogy) == null ? void 0 : o.structural_plan) == null ? void 0 : a.modifications) || []; t.innerHTML = `
             <div class="sv-modal-content">
                 <button class="sv-modal-close">&times;</button>
                 <div class="sv-cheat-sheet" id="svCheatSheet">
@@ -633,14 +650,14 @@ import{E as p,_ as P}from"./main-DaT4__Z1.js";class B{constructor(e={}){var t,i,
                     <div class="cs-section">
                         <h3>🧠 Key Takeaways</h3>
                         <ul>
-                            ${i.map(l=>`<li>${l}</li>`).join("")}
+                            ${i.map(l => `<li>${l}</li>`).join("")}
                         </ul>
                     </div>
 
                     <div class="cs-section">
                         <h3>⚡ Modifications</h3>
                         <ul>
-                            ${s.map(l=>`<li>${l}</li>`).join("")}
+                            ${s.map(l => `<li>${l}</li>`).join("")}
                         </ul>
                     </div>
 
@@ -652,7 +669,9 @@ import{E as p,_ as P}from"./main-DaT4__Z1.js";class B{constructor(e={}){var t,i,
                     <button class="sv-btn-primary" onclick="window.print()">🖨️ Print / Save PDF</button>
                 </div>
             </div>
-        `,document.body.appendChild(t);const r=()=>t.remove();t.querySelector(".sv-modal-close").addEventListener("click",r),t.addEventListener("click",l=>{l.target===t&&r()})}triggerSuccessEffect(){const e=document.createElement("div");e.style.position="fixed",e.style.top="0",e.style.left="0",e.style.width="100vw",e.style.height="100vh",e.style.background="rgba(16, 185, 129, 0.2)",e.style.pointerEvents="none",e.style.zIndex="9999",e.style.transition="opacity 0.5s ease-out",document.body.appendChild(e),setTimeout(()=>{e.style.opacity="0",setTimeout(()=>e.remove(),500)},100),window.confetti?window.confetti({particleCount:100,spread:70,origin:{y:.6}}):console.log("🎉 Confetti! (Library not found, simulating log)")}injectStyles(){if(document.getElementById("sv-validator-styles"))return;document.head.insertAdjacentHTML("beforeend",`
+        `, document.body.appendChild(t); const r = () => t.remove(); t.querySelector(".sv-modal-close").addEventListener("click", r), t.addEventListener("click", l => { l.target === t && r() })
+    } triggerSuccessEffect() { const e = document.createElement("div"); e.style.position = "fixed", e.style.top = "0", e.style.left = "0", e.style.width = "100vw", e.style.height = "100vh", e.style.background = "rgba(16, 185, 129, 0.2)", e.style.pointerEvents = "none", e.style.zIndex = "9999", e.style.transition = "opacity 0.5s ease-out", document.body.appendChild(e), setTimeout(() => { e.style.opacity = "0", setTimeout(() => e.remove(), 500) }, 100), window.confetti ? window.confetti({ particleCount: 100, spread: 70, origin: { y: .6 } }) : console.log("🎉 Confetti! (Library not found, simulating log)") } injectStyles() {
+        if (document.getElementById("sv-validator-styles")) return; document.head.insertAdjacentHTML("beforeend", `
             <style id="sv-validator-styles">
                 .sv-validation-result {
                     margin-top: 2rem;
@@ -782,16 +801,22 @@ import{E as p,_ as P}from"./main-DaT4__Z1.js";class B{constructor(e={}){var t,i,
                     .sv-modal-close, .sv-modal-actions { display: none; }
                 }
             </style>
-        `)}}class ${constructor(e){this.container=e,this.svg=null,this.lines=[],this.interactions=new Set,this.init()}init(){this.injectStyles(),this.createGradients()}createGradients(){if(document.getElementById("sv-svg-defs"))return;const e="http://www.w3.org/2000/svg",t=document.createElementNS(e,"defs");t.id="sv-svg-defs";const i=document.createElementNS(e,"linearGradient");i.id="svLineGradient",i.setAttribute("x1","0%"),i.setAttribute("y1","0%"),i.setAttribute("x2","100%"),i.setAttribute("y2","0%");const s=document.createElementNS(e,"stop");s.setAttribute("offset","0%"),s.setAttribute("stop-color","#8b5cf6"),s.setAttribute("stop-opacity","0.8");const r=document.createElementNS(e,"stop");r.setAttribute("offset","100%"),r.setAttribute("stop-color","#d946ef"),r.setAttribute("stop-opacity","1"),i.appendChild(s),i.appendChild(r),t.appendChild(i);const n=document.createElementNS(e,"filter");n.id="svLineGlow",n.setAttribute("x","-20%"),n.setAttribute("y","-20%"),n.setAttribute("width","140%"),n.setAttribute("height","140%");const o=document.createElementNS(e,"feGaussianBlur");o.setAttribute("stdDeviation","3"),o.setAttribute("result","blur");const a=document.createElementNS(e,"feMerge"),l=document.createElementNS(e,"feMergeNode");l.setAttribute("in","blur");const d=document.createElementNS(e,"feMergeNode");d.setAttribute("in","SourceGraphic"),a.appendChild(l),a.appendChild(d),n.appendChild(o),n.appendChild(a),t.appendChild(n),this.svgDefs=t}renderDecomposition(e,t,i,s){this.clear(),this.interactions.clear(),this.totalKeywords=Object.keys(i).length,this.svg=document.createElementNS("http://www.w3.org/2000/svg","svg"),this.svg.classList.add("sv-logic-svg"),this.svgDefs&&this.svg.appendChild(this.svgDefs),document.body.appendChild(this.svg),this.wrapKeywords(e,i),t.innerHTML=`
+        `)
+    }
+} class $ {
+    constructor(e) { this.container = e, this.svg = null, this.lines = [], this.interactions = new Set, this.init() } init() { this.injectStyles(), this.createGradients() } createGradients() { if (document.getElementById("sv-svg-defs")) return; const e = "http://www.w3.org/2000/svg", t = document.createElementNS(e, "defs"); t.id = "sv-svg-defs"; const i = document.createElementNS(e, "linearGradient"); i.id = "svLineGradient", i.setAttribute("x1", "0%"), i.setAttribute("y1", "0%"), i.setAttribute("x2", "100%"), i.setAttribute("y2", "0%"); const s = document.createElementNS(e, "stop"); s.setAttribute("offset", "0%"), s.setAttribute("stop-color", "#8b5cf6"), s.setAttribute("stop-opacity", "0.8"); const r = document.createElementNS(e, "stop"); r.setAttribute("offset", "100%"), r.setAttribute("stop-color", "#d946ef"), r.setAttribute("stop-opacity", "1"), i.appendChild(s), i.appendChild(r), t.appendChild(i); const n = document.createElementNS(e, "filter"); n.id = "svLineGlow", n.setAttribute("x", "-20%"), n.setAttribute("y", "-20%"), n.setAttribute("width", "140%"), n.setAttribute("height", "140%"); const o = document.createElementNS(e, "feGaussianBlur"); o.setAttribute("stdDeviation", "3"), o.setAttribute("result", "blur"); const a = document.createElementNS(e, "feMerge"), l = document.createElementNS(e, "feMergeNode"); l.setAttribute("in", "blur"); const d = document.createElementNS(e, "feMergeNode"); d.setAttribute("in", "SourceGraphic"), a.appendChild(l), a.appendChild(d), n.appendChild(o), n.appendChild(a), t.appendChild(n), this.svgDefs = t } renderDecomposition(e, t, i, s) {
+        this.clear(), this.interactions.clear(), this.totalKeywords = Object.keys(i).length, this.svg = document.createElementNS("http://www.w3.org/2000/svg", "svg"), this.svg.classList.add("sv-logic-svg"), this.svgDefs && this.svg.appendChild(this.svgDefs), document.body.appendChild(this.svg), this.wrapKeywords(e, i), t.innerHTML = `
             <div class="sv-concept-cloud fade-in">
-                ${[...new Set(Object.values(i))].map(r=>`
+                ${[...new Set(Object.values(i))].map(r => `
                     <div class="sv-concept-node" data-concept="${r}">
                         <span class="node-icon">🧩</span>
                         <span class="node-text">${r}</span>
                     </div>
                 `).join("")}
             </div>
-        `,this.bindDecompositionEvents(e,t,i,s)}wrapKeywords(e,t){const i=Object.keys(t).sort((r,n)=>n.length-r.length);let s=e.innerHTML;i.forEach(r=>{const n=new RegExp(`(${r})`,"gi");s=s.replace(n,(o,a,l,d)=>{const c=d.substring(0,l);return c.lastIndexOf("<")>c.lastIndexOf(">")?o:`<span class="sv-keyword" data-target="${t[r]}">${a}</span>`})}),e.innerHTML=s}bindDecompositionEvents(e,t,i,s){const r=e.querySelectorAll(".sv-keyword"),n=t.querySelectorAll(".sv-concept-node");r.forEach(o=>{o.addEventListener("mouseenter",()=>{const a=o.dataset.target,l=t.querySelector(`.sv-concept-node[data-concept="${a}"]`);l&&(this.drawLine(o,l),l.classList.add("highlight")),this.interactions.add(o.textContent.trim().toLowerCase()),s&&s(this.interactions.size,this.totalKeywords)}),o.addEventListener("mouseleave",()=>{this.clearLines(),n.forEach(a=>a.classList.remove("highlight"))})})}drawLine(e,t){const i=e.getBoundingClientRect(),s=t.getBoundingClientRect(),r=i.right,n=i.top+i.height/2,o=s.left,a=s.top+s.height/2,l=document.createElementNS("http://www.w3.org/2000/svg","path"),d=`M ${r} ${n} C ${r+100} ${n}, ${o-100} ${a}, ${o} ${a}`;l.setAttribute("d",d),l.setAttribute("stroke","url(#svLineGradient)"),l.setAttribute("stroke-width","4"),l.setAttribute("fill","none"),l.setAttribute("filter","url(#svLineGlow)"),l.classList.add("sv-connector-line"),this.svg.appendChild(l),this.lines.push(l)}clearLines(){this.lines.forEach(e=>e.remove()),this.lines=[]}renderDiff(e,t,i){this.clear(),e.innerHTML=`
+        `, this.bindDecompositionEvents(e, t, i, s)
+    } wrapKeywords(e, t) { const i = Object.keys(t).sort((r, n) => n.length - r.length); let s = e.innerHTML; i.forEach(r => { const n = new RegExp(`(${r})`, "gi"); s = s.replace(n, (o, a, l, d) => { const c = d.substring(0, l); return c.lastIndexOf("<") > c.lastIndexOf(">") ? o : `<span class="sv-keyword" data-target="${t[r]}">${a}</span>` }) }), e.innerHTML = s } bindDecompositionEvents(e, t, i, s) { const r = e.querySelectorAll(".sv-keyword"), n = t.querySelectorAll(".sv-concept-node"); r.forEach(o => { o.addEventListener("mouseenter", () => { const a = o.dataset.target, l = t.querySelector(`.sv-concept-node[data-concept="${a}"]`); l && (this.drawLine(o, l), l.classList.add("highlight")), this.interactions.add(o.textContent.trim().toLowerCase()), s && s(this.interactions.size, this.totalKeywords) }), o.addEventListener("mouseleave", () => { this.clearLines(), n.forEach(a => a.classList.remove("highlight")) }) }) } drawLine(e, t) { const i = e.getBoundingClientRect(), s = t.getBoundingClientRect(), r = i.right, n = i.top + i.height / 2, o = s.left, a = s.top + s.height / 2, l = document.createElementNS("http://www.w3.org/2000/svg", "path"), d = `M ${r} ${n} C ${r + 100} ${n}, ${o - 100} ${a}, ${o} ${a}`; l.setAttribute("d", d), l.setAttribute("stroke", "url(#svLineGradient)"), l.setAttribute("stroke-width", "4"), l.setAttribute("fill", "none"), l.setAttribute("filter", "url(#svLineGlow)"), l.classList.add("sv-connector-line"), this.svg.appendChild(l), this.lines.push(l) } clearLines() { this.lines.forEach(e => e.remove()), this.lines = [] } renderDiff(e, t, i) {
+        this.clear(), e.innerHTML = `
             <div class="sv-diff-container fade-in">
                 <div class="sv-diff-header">
                     <span class="diff-title">Algorithm Evolution</span>
@@ -816,8 +841,8 @@ import{E as p,_ as P}from"./main-DaT4__Z1.js";class B{constructor(e={}){var t,i,
                         <div class="column-label">Problem-Specific Tweaks</div>
                         <div class="sv-diff-box">
                             <div class="line">Initialize standard structures</div>
-                            ${i.map((s,r)=>`
-                                <div class="line addition" style="animation-delay: ${.2+r*.1}s">
+                            ${i.map((s, r) => `
+                                <div class="line addition" style="animation-delay: ${.2 + r * .1}s">
                                     <span class="diff-icon">+</span>
                                     <span class="diff-text">${s}</span>
                                 </div>
@@ -828,7 +853,8 @@ import{E as p,_ as P}from"./main-DaT4__Z1.js";class B{constructor(e={}){var t,i,
                     </div>
                 </div>
             </div>
-        `}clear(){this.svg&&(this.svg.remove(),this.svg=null),this.lines=[]}injectStyles(){if(document.getElementById("sv-logic-styles"))return;document.head.insertAdjacentHTML("beforeend",`
+        `} clear() { this.svg && (this.svg.remove(), this.svg = null), this.lines = [] } injectStyles() {
+        if (document.getElementById("sv-logic-styles")) return; document.head.insertAdjacentHTML("beforeend", `
             <style id="sv-logic-styles">
                 .sv-logic-svg {
                     position: fixed;
@@ -1005,7 +1031,11 @@ import{E as p,_ as P}from"./main-DaT4__Z1.js";class B{constructor(e={}){var t,i,
                     to { opacity: 1; transform: translateX(0); }
                 }
             </style>
-        `)}}const M=Object.freeze(Object.defineProperty({__proto__:null,LogicFlowRenderer:$},Symbol.toStringTag,{value:"Module"}));class q{constructor(e,t={}){typeof e=="string"?this.container=document.getElementById(e):this.container=e,this.options=t,this.solution=null,this.currentStep="breakdown",this.lang="java",this.injectStyles()}render(e){if(this.solution=e,this.currentStep="breakdown",!this.container)return;const t=document.getElementById("topRightControls");t&&(t.style.display="none"),this.logicFlow=null,this.container.innerHTML=`
+        `)
+    }
+} const M = Object.freeze(Object.defineProperty({ __proto__: null, LogicFlowRenderer: $ }, Symbol.toStringTag, { value: "Module" })); class q {
+    constructor(e, t = {}) { typeof e == "string" ? this.container = document.getElementById(e) : this.container = e, this.options = t, this.solution = null, this.currentStep = "breakdown", this.lang = "java", this.injectStyles() } render(e) {
+        if (this.solution = e, this.currentStep = "breakdown", !this.container) return; const t = document.getElementById("topRightControls"); t && (t.style.display = "none"), this.logicFlow = null, this.container.innerHTML = `
             <div class="sv-overlay fade-in">
                 <div class="sv-glass-card">
                     <!-- Top Bar: Progress Indicator -->
@@ -1054,12 +1084,14 @@ import{E as p,_ as P}from"./main-DaT4__Z1.js";class B{constructor(e={}){var t,i,
                     </div>
                 </div>
             </div>
-        `,this.logicFlow=new $(this.container.querySelector("#svVizContainer")),this.bindEvents(),this.showStep("breakdown")}showStep(e){this.currentStep=e,this.updateProgressUI();const t=this.container.querySelector("#svLeftPanel"),i=this.container.querySelector("#svVizContainer");if(!(!t||!i))switch(this.logicFlow&&this.logicFlow.clear(),e){case"breakdown":this.renderBreakdown(t,i);break;case"concept":this.renderConcept(t,i);break;case"viz":this.renderVisualizer(t,i);break;case"output":this.renderOutput(t,i);break}}renderBreakdown(e,t){e.innerHTML=`
+        `, this.logicFlow = new $(this.container.querySelector("#svVizContainer")), this.bindEvents(), this.showStep("breakdown")
+    } showStep(e) { this.currentStep = e, this.updateProgressUI(); const t = this.container.querySelector("#svLeftPanel"), i = this.container.querySelector("#svVizContainer"); if (!(!t || !i)) switch (this.logicFlow && this.logicFlow.clear(), e) { case "breakdown": this.renderBreakdown(t, i); break; case "concept": this.renderConcept(t, i); break; case "viz": this.renderVisualizer(t, i); break; case "output": this.renderOutput(t, i); break } } renderBreakdown(e, t) {
+        e.innerHTML = `
             <div class="sv-content-section fade-in" id="svBreakdownSection">
                 <h2>🔍 Problem Breakdown</h2>
                 <div class="sv-problem-text">${this.solution.pedagogy.question}</div>
                 <ul class="sv-list">
-                    ${this.solution.pedagogy.breakdown.map(s=>`<li>${s}</li>`).join("")}
+                    ${this.solution.pedagogy.breakdown.map(s => `<li>${s}</li>`).join("")}
                 </ul>
                 <div class="sv-hint-box">
                     <span class="hint-icon">💡</span>
@@ -1071,7 +1103,9 @@ import{E as p,_ as P}from"./main-DaT4__Z1.js";class B{constructor(e={}){var t,i,
                 </div>
                 <button class="sv-next-btn" id="svNextBtn">Next: Concept Selection →</button>
             </div>
-        `,e.addEventListener("click",s=>{s.target&&s.target.id==="svNextBtn"&&this.showStep("concept")});const i=this.solution.pedagogy.key_mapping&&Object.keys(this.solution.pedagogy.key_mapping).length>0;if(!i){const s=e.querySelector("#svNextBtn"),r=e.querySelector("#svInteractionProgress"),n=e.querySelector(".sv-hint-box");s&&(s.disabled=!1),r&&(r.style.display="none"),n&&(n.style.display="none")}this.logicFlow&&i&&this.logicFlow.renderDecomposition(e.querySelector("#svBreakdownSection"),t,this.solution.pedagogy.key_mapping,(s,r)=>{const n=Math.min(s/r*100,100),o=e.querySelector("#svInteractionProgress .fill"),a=e.querySelector("#svInteractionProgress .progress-text"),l=e.querySelector("#svNextBtn");o&&(o.style.width=`${n}%`),a&&(a.textContent=n>=100?"Ready to proceed!":`Explore ${Math.round(n)}% of keywords`),n>=50&&l&&l.classList.add("pulse")})}renderConcept(e,t){e.innerHTML=`
+        `, e.addEventListener("click", s => { s.target && s.target.id === "svNextBtn" && this.showStep("concept") }); const i = this.solution.pedagogy.key_mapping && Object.keys(this.solution.pedagogy.key_mapping).length > 0; if (!i) { const s = e.querySelector("#svNextBtn"), r = e.querySelector("#svInteractionProgress"), n = e.querySelector(".sv-hint-box"); s && (s.disabled = !1), r && (r.style.display = "none"), n && (n.style.display = "none") } this.logicFlow && i && this.logicFlow.renderDecomposition(e.querySelector("#svBreakdownSection"), t, this.solution.pedagogy.key_mapping, (s, r) => { const n = Math.min(s / r * 100, 100), o = e.querySelector("#svInteractionProgress .fill"), a = e.querySelector("#svInteractionProgress .progress-text"), l = e.querySelector("#svNextBtn"); o && (o.style.width = `${n}%`), a && (a.textContent = n >= 100 ? "Ready to proceed!" : `Explore ${Math.round(n)}% of keywords`), n >= 50 && l && l.classList.add("pulse") })
+    } renderConcept(e, t) {
+        e.innerHTML = `
             <div class="sv-content-section fade-in">
                 <h2>💡 Concept Selection</h2>
                 <div class="sv-concept-card">
@@ -1083,37 +1117,47 @@ import{E as p,_ as P}from"./main-DaT4__Z1.js";class B{constructor(e={}){var t,i,
                 </div>
                 <h3>Structural Plan</h3>
                 <ul class="sv-list">
-                    ${this.solution.pedagogy.structural_plan.modifications.map(i=>`<li>${i}</li>`).join("")}
+                    ${this.solution.pedagogy.structural_plan.modifications.map(i => `<li>${i}</li>`).join("")}
                 </ul>
                 <button class="sv-next-btn" id="svNextBtn">Next: Start Visualizer →</button>
             </div>
-        `,e.addEventListener("click",i=>{i.target&&i.target.id==="svNextBtn"&&this.showStep("viz")}),this.logicFlow&&this.logicFlow.renderDiff(t,this.solution.pedagogy.structural_plan.default_algo,this.solution.pedagogy.structural_plan.modifications)}renderVisualizer(e,t){e.innerHTML=`
+        `, e.addEventListener("click", i => { i.target && i.target.id === "svNextBtn" && this.showStep("viz") }), this.logicFlow && this.logicFlow.renderDiff(t, this.solution.pedagogy.structural_plan.default_algo, this.solution.pedagogy.structural_plan.modifications)
+    } renderVisualizer(e, t) {
+        e.innerHTML = `
             <div class="sv-content-section fade-in">
                 <h2>💻 Implementation</h2>
                 <div class="sv-code-tabs">
-                    <button class="sv-tab ${this.lang==="java"?"active":""}" data-lang="java">Java</button>
-                    <button class="sv-tab ${this.lang==="python"?"active":""}" data-lang="python">Python</button>
+                    <button class="sv-tab ${this.lang === "cpp" ? "active" : ""}" data-lang="cpp">C++</button>
+                    <button class="sv-tab ${this.lang === "java" ? "active" : ""}" data-lang="java">Java</button>
+                    <button class="sv-tab ${this.lang === "python" ? "active" : ""}" data-lang="python">Python</button>
+                    <button class="sv-tab ${this.lang === "javascript" ? "active" : ""}" data-lang="javascript">JavaScript</button>
                 </div>
                 <div class="sv-code-block">
                     <pre><code id="svCodeArea" class="language-${this.lang}">${this.escapeHtml(this.solution.getCode(this.lang))}</code></pre>
                 </div>
                 <div id="svNarratorControls" class="sv-narrator-controls"></div>
             </div>
-        `,e.querySelectorAll(".sv-tab").forEach(i=>{i.addEventListener("click",s=>this.setLang(s.target.dataset.lang))}),this.initNarrator(e,t)}renderOutput(e,t){e.innerHTML=`
+        `, e.querySelectorAll(".sv-tab").forEach(i => { i.addEventListener("click", s => this.setLang(s.target.dataset.lang)) }), this.initNarrator(e, t)
+    } renderOutput(e, t) {
+        e.innerHTML = `
             <div class="sv-content-section fade-in">
                 <h2>🏆 Final Result</h2>
                 <div id="svOutputComparator" class="sv-output-comparator"></div>
             </div>
-        `,this.initComparator(e,t)}setLang(e){this.lang=e,this.currentStep==="viz"&&this.showStep("viz")}initNarrator(e,t){const i=e.querySelector("#svNarratorControls"),s=e.querySelector("#svCodeArea");if(!i||!s||!t)return;const r=j.parseCodeLines(this.solution.getCode(this.lang));s.innerHTML=r.map((o,a)=>`<div class="nc-code-line" data-line="${a+1}">${this.escapeHtml(o)}</div>`).join("");const n=e.querySelector(".sv-code-block");n&&(n.innerHTML=`
+        `, this.initComparator(e, t)
+    } setLang(e) { this.lang = e, this.currentStep === "viz" && this.showStep("viz") } initNarrator(e, t) {
+        const i = e.querySelector("#svNarratorControls"), s = e.querySelector("#svCodeArea"); if (!i || !s || !t) return; const r = j.parseCodeLines(this.solution.getCode(this.lang)); s.innerHTML = r.map((o, a) => `<div class="nc-code-line" data-line="${a + 1}">${this.escapeHtml(o)}</div>`).join(""); const n = e.querySelector(".sv-code-block"); n && (n.innerHTML = `
                 <div class="nc-code-body" style="display:flex; font-family: monospace;">
                     <div class="nc-line-numbers" style="padding-right:10px; border-right:1px solid #333; margin-right:10px; color:#666;">
-                        ${r.map((o,a)=>`<div>${a+1}</div>`).join("")}
+                        ${r.map((o, a) => `<div>${a + 1}</div>`).join("")}
                     </div>
                     <div class="nc-code-content" style="flex:1;">
-                        ${r.map((o,a)=>`<div class="nc-code-line" data-line="${a+1}" style="white-space:pre;">${this.escapeHtml(o)}</div>`).join("")}
+                        ${r.map((o, a) => `<div class="nc-code-line" data-line="${a + 1}" style="white-space:pre;">${this.escapeHtml(o)}</div>`).join("")}
                     </div>
                 </div>
-            `),P(async()=>{const{UniversalNarrator:o}=await import("./universal-narrator-D55Th27_.js");return{UniversalNarrator:o}},__vite__mapDeps([0,1])).then(({UniversalNarrator:o})=>{this.narrator=new o({container:e,codeContainer:n,vizContainer:t,controlsContainer:i,onOutput:a=>{this.validator&&this.validator.updateCurrentOutput(a)},onComplete:()=>{this.showStep("output"),setTimeout(()=>{this.validator&&this.validator.validate()},500)}}),this.narrator.loadContext(this.solution)})}initComparator(e,t){const i=e.querySelector("#svOutputComparator");i&&(this.validator=new _({container:i,onComplete:s=>{console.log("Validation Complete:",s)}}),this.validator.setExpectedOutput(this.solution.simulation.sample_io.expected_output))}updateProgressUI(){this.container.querySelectorAll(".sv-step").forEach(t=>{const i=t.dataset.step;t.classList.toggle("active",i===this.currentStep);const s=["breakdown","concept","viz","output"],r=s.indexOf(this.currentStep),n=s.indexOf(i);t.classList.toggle("completed",n<r)})}escapeHtml(e){return e?e.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#039;"):""}bindEvents(){const e=this.container.querySelector("#svCloseBtn");e==null||e.addEventListener("click",()=>this.close())}close(){this.narrator&&(this.narrator.pause(),this.narrator=null),this.container&&(this.container.innerHTML="");const e=document.getElementById("topRightControls");e&&(e.style.display=""),this.options.onClose&&this.options.onClose()}injectStyles(){if(document.getElementById("sv-styles"))return;document.head.insertAdjacentHTML("beforeend",`
+            `), P(async () => { const { UniversalNarrator: o } = await import("./universal-narrator-D55Th27_.js"); return { UniversalNarrator: o } }, __vite__mapDeps([0, 1])).then(({ UniversalNarrator: o }) => { this.narrator = new o({ container: e, codeContainer: n, vizContainer: t, controlsContainer: i, onOutput: a => { this.validator && this.validator.updateCurrentOutput(a) }, onComplete: () => { this.showStep("output"), setTimeout(() => { this.validator && this.validator.validate() }, 500) } }), this.narrator.loadContext(this.solution) })
+    } initComparator(e, t) { const i = e.querySelector("#svOutputComparator"); i && (this.validator = new _({ container: i, onComplete: s => { console.log("Validation Complete:", s) } }), this.validator.setExpectedOutput(this.solution.simulation.sample_io.expected_output)) } updateProgressUI() { this.container.querySelectorAll(".sv-step").forEach(t => { const i = t.dataset.step; t.classList.toggle("active", i === this.currentStep); const s = ["breakdown", "concept", "viz", "output"], r = s.indexOf(this.currentStep), n = s.indexOf(i); t.classList.toggle("completed", n < r) }) } escapeHtml(e) { return e ? e.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;") : "" } bindEvents() { const e = this.container.querySelector("#svCloseBtn"); e == null || e.addEventListener("click", () => this.close()) } close() { this.narrator && (this.narrator.pause(), this.narrator = null), this.container && (this.container.innerHTML = ""); const e = document.getElementById("topRightControls"); e && (e.style.display = ""), this.options.onClose && this.options.onClose() } injectStyles() {
+        if (document.getElementById("sv-styles")) return; document.head.insertAdjacentHTML("beforeend", `
             <style id="sv-styles">
                 .sv-overlay {
                     position: fixed;
@@ -1366,4 +1410,6 @@ import{E as p,_ as P}from"./main-DaT4__Z1.js";class B{constructor(e={}){var t,i,
                     to { opacity: 1; transform: translateY(0); }
                 }
             </style>
-        `)}}typeof window<"u"&&(window.solutionViewer=null);export{B as D,q as S,_ as a,M as l};
+        `)
+    }
+} typeof window < "u" && (window.solutionViewer = null); export { B as D, q as S, _ as a, M as l };

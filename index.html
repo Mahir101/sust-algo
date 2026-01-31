@@ -747,6 +747,12 @@
         E-Lectures
         <span class="nav-item-badge" style="background: white; color: #667eea">Learn</span>
       </button>
+      <button class="nav-item leetcode-nav-btn" data-section="leetcode-patterns"
+        style="background: linear-gradient(135deg, #FF9800, #F44336); color: white; margin-top: 0.5rem; box-shadow: 0 4px 15px rgba(255, 152, 0, 0.3);">
+        <span class="nav-item-icon" aria-hidden="true">🧠</span>
+        LeetCode Patterns
+        <span class="nav-item-badge" style="background: white; color: #F44336">HOT</span>
+      </button>
       <!-- Exam Solutions -->
       <div style="margin-top: 0.75rem; padding-top: 0.5rem; border-top: 1px solid var(--border-subtle);">
         <div
@@ -1398,7 +1404,137 @@
 
       <!-- Tabs Removed for specialized Sorting Page -->
 
-      <!-- SORTING VISUALIZATION (Dashboard Layout) -->
+
+      <!-- ═══════════════════════════════════════════════════════════════════════
+       SECTION: LEETCODE PATTERNS
+       ═══════════════════════════════════════════════════════════════════════ -->
+      <section id="section-leetcode" class="leetcode-container hidden" style="display: none; padding: 2rem;">
+        <div class="lc-header" style="margin-bottom: 2rem;">
+          <h1
+            style="font-size: 2.5rem; background: linear-gradient(90deg, #FF9800, #F44336); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+            LeetCode Patterns</h1>
+          <p style="color: var(--text-secondary); margin-top: 0.5rem;">Master the most common coding interview patterns
+            with interactive visualizations.</p>
+        </div>
+
+        <div class="lc-layout" style="display: grid; grid-template-columns: 250px 1fr; gap: 2rem; min-height: 80vh;">
+          <!-- Sidebar: Categories & Problems -->
+          <div class="lc-sidebar"
+            style="background: var(--bg-card); border-radius: 16px; border: 1px solid var(--border-soft); overflow: hidden; display: flex; flex-direction: column;">
+            <div class="lc-categories-header"
+              style="padding: 1rem; background: var(--bg-paper); border-bottom: 1px solid var(--border-soft); font-weight: bold; color: var(--text-primary);">
+              Patterns
+            </div>
+            <div class="lc-category-list" style="overflow-y: auto; flex: 0 0 auto; max-height: 40%;">
+              <!-- Populated by JS -->
+            </div>
+
+            <div class="lc-problems-header"
+              style="padding: 1rem; background: var(--bg-paper); border-top: 1px solid var(--border-soft); border-bottom: 1px solid var(--border-soft); font-weight: bold; color: var(--text-primary);">
+              Problems
+            </div>
+            <div class="lc-problem-list" style="overflow-y: auto; flex: 1; padding: 0.5rem;">
+              <!-- Populated by JS -->
+            </div>
+          </div>
+
+          <!-- Main Content: Visualization Area -->
+          <div class="lc-main-content" style="position: relative;">
+            <div id="lcSolutionViewerContainer" style="width: 100%; height: 100%;">
+              <div class="lc-empty-state"
+                style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; color: var(--text-muted); text-align: center;">
+                <div style="font-size: 4rem; margin-bottom: 1rem;">👈</div>
+                <h3>Select a problem to start</h3>
+                <p>Choose a pattern and problem from the left menu.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <style>
+        .lc-category-btn {
+          width: 100%;
+          text-align: left;
+          padding: 0.75rem 1rem;
+          background: none;
+          border: none;
+          color: var(--text-secondary);
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          transition: all 0.2s;
+          border-left: 3px solid transparent;
+        }
+
+        .lc-category-btn:hover {
+          background: var(--bg-hover);
+          color: var(--text-primary);
+        }
+
+        .lc-category-btn.active {
+          background: rgba(255, 152, 0, 0.1);
+          color: #FF9800;
+          border-left-color: #FF9800;
+        }
+
+        .lc-problem-item {
+          padding: 0.75rem;
+          margin-bottom: 0.5rem;
+          background: var(--bg-paper);
+          border: 1px solid var(--border-subtle);
+          border-radius: 8px;
+          cursor: pointer;
+          transition: all 0.2s;
+        }
+
+        .lc-problem-item:hover {
+          transform: translateX(4px);
+          border-color: #FF9800;
+        }
+
+        .lc-problem-item.active {
+          border-color: #FF9800;
+          background: rgba(255, 152, 0, 0.05);
+          box-shadow: 0 4px 12px rgba(255, 152, 0, 0.1);
+        }
+
+        .lc-prob-header {
+          display: flex;
+          justify-content: space-between;
+          font-size: 0.75rem;
+          margin-bottom: 0.25rem;
+        }
+
+        .lc-prob-id {
+          font-family: monospace;
+          color: var(--text-muted);
+        }
+
+        .lc-prob-difficulty.easy {
+          color: #4CAF50;
+        }
+
+        .lc-prob-difficulty.medium {
+          color: #FF9800;
+        }
+
+        .lc-prob-difficulty.hard {
+          color: #F44336;
+        }
+
+        .lc-prob-title {
+          font-weight: 600;
+          font-size: 0.9rem;
+          color: var(--text-primary);
+        }
+      </style>
+
+      <!-- ═══════════════════════════════════════════════════════════════════════
+       EXISTING SECTIONS ...
+       ═══════════════════════════════════════════════════════════════════════ -->
+
       <div id="sortingVizContent" class="sorting-dashboard">
 
         <!-- ZONE 1: THE STAGE (Canvas + HUD) -->
@@ -9084,7 +9220,41 @@ WHERE condition;</pre>
   <!-- <script defer src="js/app.js"></script> -->
 
 
+
+  <script type="module">
+    import { LeetCodeLoader } from './src/assets/leetcode-loader.js';
+
+    document.addEventListener('DOMContentLoaded', () => {
+      // Initialize LeetCode Loader
+      new LeetCodeLoader();
+
+      // Handle navigation to LeetCode section
+      const lcBtn = document.querySelector('.leetcode-nav-btn');
+      if (lcBtn) {
+        lcBtn.addEventListener('click', () => {
+          // Hide all sections
+          document.querySelectorAll('.dashboard-container, .sorting-dashboard, .grid-container, .graph-container, .algo-race-container, .electure-container, .algo-midterm-solutions-container, .algo-final-solutions-container, .ds-container, .leetcode-container').forEach(el => {
+            el.style.display = 'none';
+            el.classList.add('hidden');
+          });
+
+          // Show LeetCode section
+          const lcSection = document.getElementById('section-leetcode');
+          if (lcSection) {
+            lcSection.style.display = 'block';
+            lcSection.classList.remove('hidden');
+          }
+
+          // Update active state in sidebar
+          document.querySelectorAll('.nav-item').forEach(btn => btn.classList.remove('active'));
+          lcBtn.classList.add('active');
+        });
+      }
+    });
+  </script>
 </body>
+
+</html>
 
 
 <!-- Mirrored from rdpviz.vercel.app/ by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 31 Jan 2026 05:38:03 GMT -->
