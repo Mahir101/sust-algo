@@ -1395,12 +1395,19 @@
           </div>
         </div>
 
-        <div class="dashboard-extras stagger-in">
-          <button class="dashboard-btn daily" id="btnDashboardDaily">
-            🎯 Daily Challenge
-          </button>
-        </div>
+        <!-- UNIVERSITY SUBJECTS MOUNT POINT (Dynamic Injection) -->
+        <div id="university-subjects-mount" style="display: contents;"></div>
       </div>
+
+      <div class="dashboard-extras stagger-in">
+        <button class="dashboard-btn daily" id="btnDashboardDaily">
+          🎯 Daily Challenge
+        </button>
+      </div>
+      </div>
+
+      <!-- UNIVERSITY DETAIL VIEW (Hidden by default) -->
+      <div id="university-detail-view" style="display: none;" class="animate-in"></div>
     </section>
 
     <!-- ═══════════════════════════════════════════════════════════════════
@@ -9532,6 +9539,16 @@ WHERE condition;</pre>
           subBtn.classList.add('active');
         });
       }
+    });
+  </script>
+
+  <script type="module">
+    import { SubjectsLoader } from '/src/assets/subjects-loader.js';
+
+    // Initialize when DOM is ready
+    window.addEventListener('DOMContentLoaded', () => {
+      console.log('Initializing Subjects Loader...');
+      new SubjectsLoader();
     });
   </script>
 </body>

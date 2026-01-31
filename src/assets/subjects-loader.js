@@ -3,144 +3,43 @@ import { SUBJECTS_DATA } from './subjects-data.js';
 export class SubjectsLoader {
     constructor() {
         this.data = SUBJECTS_DATA;
-        this.currentSubjectId = null;
         this.init();
     }
 
     init() {
         this.cacheDOM();
         this.bindEvents();
-        this.startSidebarInjector();
-        setTimeout(() => this.renderDashboard(), 0);
+        setTimeout(() => this.renderDashboard(), 100); // Slight delay to ensure DOM is ready
     }
 
     cacheDOM() {
-        this.container = document.getElementById('section-subjects');
-        if (!this.container) return;
+        // Mount Points
+        this.mountPoint = document.getElementById('university-subjects-mount');
+        this.detailContainer = document.getElementById('university-detail-view');
 
-        this.dashboardView = this.container.querySelector('.subjects-dashboard');
-        this.detailView = this.container.querySelector('.subject-detail-view');
-        this.gridContainer = this.container.querySelector('.subjects-grid');
-        this.detailHeader = this.container.querySelector('.subject-detail-header');
-        this.detailContent = this.container.querySelector('.subject-detail-content');
+        // Views to Toggle
+        this.dashboardContainer = document.querySelector('.dashboard-container');
     }
 
     bindEvents() {
-        // Global Navigation Delegation (Safe against re-renders)
+        // Global Delegation for dynamic elements
         document.addEventListener('click', (e) => {
-            const btn = e.target.closest('.subjects-nav-btn');
-            if (btn) {
-                this.activateSection();
-            }
-        });
-
-        if (!this.container) return;
-
-        // Card clicks (Delegation)
-        this.gridContainer?.addEventListener('click', (e) => {
+            // Subject Card Click
             const card = e.target.closest('.subject-card');
             if (card) {
                 const subjectKey = card.dataset.subject;
                 this.loadSubject(subjectKey);
             }
-        });
 
-        // Navigation (Back button)
-        this.container.addEventListener('click', (e) => {
+            // Back Button Click
             if (e.target.closest('.sub-back-btn')) {
                 this.showDashboard();
             }
         });
     }
 
-    startSidebarInjector() {
-        const inject = () => {
-            if (document.querySelector('.subjects-nav-btn')) return;
-
-            const sidebar = document.getElementById('sidebar');
-            if (!sidebar) return;
-
-            // Try to insert after "Visualizers" section
-            const sections = Array.from(sidebar.querySelectorAll('.nav-section'));
-            const anchor = sections.find(el => el.textContent.includes('Visualizers')) || sections[sections.length - 1];
-
-            const container = document.createElement('div');
-            container.className = 'nav-section';
-            container.innerHTML = `
-                <div class="nav-section-title" style="margin-top: 1.5rem; color: var(--text-muted); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600; padding-left: 0.75rem;">University</div>
-                <button class="nav-item subjects-nav-btn" data-section="cs-subjects" style="
-                    background: linear-gradient(135deg, #FF0080, #7928CA); 
-                    color: white; 
-                    margin-bottom: 0.5rem; 
-                    box-shadow: 0 4px 15px rgba(255, 0, 128, 0.3);
-                    width: 100%;
-                    text-align: left;
-                    display: flex;
-                    align-items: center;
-                    gap: 0.75rem;
-                    padding: 0.75rem 1rem;
-                    border-radius: 12px;
-                    border: none;
-                    cursor: pointer;
-                    font-weight: 500;
-                    position: relative;
-                ">
-                    <span class="nav-item-icon" aria-hidden="true">🏛️</span>
-                    CS Subjects
-                </button>
-            `;
-
-            if (anchor && anchor.nextSibling) {
-                sidebar.insertBefore(container, anchor.nextSibling);
-            } else {
-                sidebar.appendChild(container);
-            }
-        };
-
-        // Immediate + Observer
-        inject();
-        const observer = new MutationObserver((mutations) => {
-            // Debounce slightly or just check existence
-            if (!document.querySelector('.subjects-nav-btn')) inject();
-        });
-
-        const sidebar = document.getElementById('sidebar');
-        if (sidebar) observer.observe(sidebar, { childList: true, subtree: true });
-
-        // Backup check
-        setTimeout(inject, 1000);
-        setTimeout(inject, 3000);
-    }
-
-    activateSection() {
-        // 1. Hide all other major sections
-        // Note: This list is aggressive to ensure we clear the view
-        const sections = [
-            '.dashboard-container', '.sorting-dashboard', '.grid-container', '.graph-container',
-            '.algo-race-container', '.electure-container', '.algo-midterm-solutions-container',
-            '.algo-final-solutions-container', '.ds-container', '.leetcode-container'
-        ];
-
-        document.querySelectorAll(sections.join(', ')).forEach(el => {
-            el.style.display = 'none';
-            el.classList.add('hidden');
-        });
-
-        // 2. Show CS Subjects
-        if (this.container) {
-            this.container.style.display = 'block';
-            this.container.classList.remove('hidden');
-            this.showDashboard(); // Ensure we are on dashboard view, not detail
-        }
-
-        // 3. Update Sidebar Active State
-        document.querySelectorAll('.nav-item').forEach(b => b.classList.remove('active'));
-        const btn = document.querySelector('.subjects-nav-btn');
-        if (btn) btn.classList.add('active');
-    }
-
     renderDashboard() {
-        if (!this.gridContainer) return;
+        if (!this.mountPoint) return;
 
         // Group by Tier
         const tiers = {};
@@ -150,112 +49,142 @@ export class SubjectsLoader {
             tiers[tier].push({ key, ...subject });
         });
 
-        // Render Tiers
-        this.gridContainer.innerHTML = Object.keys(tiers).sort().map(tierName => `
-            <div class="tier-section" style="margin-bottom: 3rem;">
-                <h2 class="tier-title" style="
-                    font-size: 1.5rem; 
-                    margin-bottom: 1.5rem; 
-                    color: var(--text-primary); 
-                    border-bottom: 1px solid var(--border-subtle); 
-                    padding-bottom: 0.5rem;
-                    display: flex;
-                    align-items: center;
-                    gap: 0.5rem;
-                ">
+        // Generate HTML
+        // Note: We use grid-column: 1 / -1 for headers to span the full grid width
+        this.mountPoint.innerHTML = Object.keys(tiers).sort().map(tierName => `
+            <div class="tier-separator" style="grid-column: 1 / -1; margin-top: 3rem; margin-bottom: 1rem; border-bottom: 1px solid var(--border-subtle); padding-bottom: 0.5rem;">
+                <h2 style="font-size: 1.25rem; color: var(--text-primary); display: flex; align-items: center; gap: 0.5rem;">
                     <span style="color: var(--accent-primary)">◈</span> ${tierName}
                 </h2>
-                <div class="tier-grid" style="
-                    display: grid;
-                    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-                    gap: 2rem;
-                ">
-                    ${tiers[tierName].map(sub => `
-                        <div class="subject-card" data-subject="${sub.key}" style="--sub-gradient: ${sub.color}">
-                            <div class="sub-card-content">
-                                <div class="sub-icon">${sub.icon}</div>
-                                <h3 class="sub-title">${sub.key}</h3>
-                                <p class="sub-desc">${sub.description}</p>
-                                <div class="sub-meta">
-                                    <span>📚 ${sub.modules.length} Modules</span>
-                                </div>
-                            </div>
-                            <div class="sub-card-overlay"></div>
-                        </div>
-                    `).join('')}
-                </div>
             </div>
+            
+            ${tiers[tierName].map(sub => `
+                <div class="subject-card fade-in-up" data-subject="${sub.key}" style="
+                    background: var(--bg-card);
+                    border: 1px solid var(--border-subtle);
+                    border-radius: 16px;
+                    padding: 1.5rem;
+                    cursor: pointer;
+                    transition: transform 0.2s, box-shadow 0.2s;
+                    position: relative;
+                    overflow: hidden;
+                    min-height: 200px;
+                    display: flex;
+                    flex-direction: column;
+                ">
+                    <!-- Gradient Background hint -->
+                    <div style="
+                        position: absolute;
+                        top: 0; left: 0; right: 0;
+                        height: 6px;
+                        background: ${sub.color};
+                    "></div>
+
+                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">${sub.icon}</div>
+                    <h3 style="font-size: 1.2rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--text-primary);">${sub.key}</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5; flex-grow: 1;">${sub.description}</p>
+                    
+                    <div style="
+                        margin-top: 1rem; 
+                        font-size: 0.8rem; 
+                        color: var(--text-muted); 
+                        background: var(--bg-paper); 
+                        padding: 0.25rem 0.75rem; 
+                        border-radius: 20px; 
+                        align-self: flex-start;
+                        border: 1px solid var(--border-subtle);
+                    ">
+                        ${sub.modules.length} Modules
+                    </div>
+                </div>
+            `).join('')}
         `).join('');
     }
 
     loadSubject(subjectName) {
         const subject = this.data[subjectName];
-        if (!subject) return;
+        if (!subject || !this.detailContainer) return;
 
-        // Populate Header
-        if (this.detailHeader) {
-            this.detailHeader.innerHTML = `
-                <button class="sub-back-btn">
-                    <span>←</span> Course Catalog
+        // Render Detail View
+        this.detailContainer.innerHTML = `
+            <div class="subject-detail-header" style="
+                background: linear-gradient(to bottom, var(--bg-card), var(--bg-background));
+                padding: 3rem 2rem;
+                border-bottom: 1px solid var(--border-subtle);
+                margin-bottom: 2rem;
+                border-radius: 0 0 24px 24px;
+            ">
+                <button class="sub-back-btn" style="
+                    background: none; border: none; color: var(--text-secondary); 
+                    font-size: 1rem; cursor: pointer; display: flex; align-items: center; gap: 0.5rem;
+                    margin-bottom: 1.5rem; padding: 0;
+                ">
+                    <span>←</span> Back to Dashboard
                 </button>
-                <div class="sub-header-content">
-                    <div class="sub-header-icon">${subject.icon}</div>
+                <div style="display: flex; gap: 2rem; align-items: center;">
+                    <div style="font-size: 4rem;">${subject.icon}</div>
                     <div>
-                        <h1 class="sub-header-title">${subjectName}</h1>
-                        <p class="sub-header-tier" style="
-                            font-size: 0.9rem; 
-                            text-transform: uppercase; 
-                            letter-spacing: 1px; 
-                            color: rgba(255,255,255,0.6); 
-                            margin-bottom: 0.5rem;
-                        ">${subject.tier}</p>
-                        <p class="sub-header-desc">${subject.description}</p>
+                        <div style="
+                            font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; 
+                            color: var(--accent-primary); margin-bottom: 0.5rem; font-weight: 600;
+                        ">${subject.tier}</div>
+                        <h1 style="font-size: 2.5rem; margin-bottom: 1rem; line-height: 1.2;">${subjectName}</h1>
+                        <p style="font-size: 1.1rem; color: var(--text-secondary); max-width: 600px;">${subject.description}</p>
                     </div>
                 </div>
-                <div class="sub-header-bg" style="background: ${subject.color}; opacity: 0.15"></div>
-            `;
-        }
+            </div>
 
-        // Populate Modules
-        if (this.detailContent) {
-            this.detailContent.innerHTML = subject.modules.map((module, index) => `
-                <div class="module-card fade-in-up" style="animation-delay: ${index * 0.1}s">
-                    <div class="module-header">
-                        <span class="module-idx">Module ${index + 1}</span>
-                        <h3 class="module-title">${module.title}</h3>
+            <div class="subject-modules-grid" style="
+                display: grid; 
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+                gap: 1.5rem; 
+                padding: 0 2rem 4rem 2rem;
+                max-width: 1400px;
+                margin: 0 auto;
+            ">
+                ${subject.modules.map((module, idx) => `
+                    <div class="module-card" style="
+                        background: var(--bg-card);
+                        border: 1px solid var(--border-subtle);
+                        border-radius: 12px;
+                        padding: 1.5rem;
+                    ">
+                        <div style="
+                            color: var(--text-muted); font-size: 0.8rem; margin-bottom: 0.5rem;
+                            text-transform: uppercase; letter-spacing: 0.5px;
+                        ">Module ${idx + 1}</div>
+                        <h3 style="font-size: 1.1rem; margin-bottom: 1rem; color: var(--text-primary);">${module.title}</h3>
+                        <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                            ${module.topics.map(topic => `
+                                <span style="
+                                    font-size: 0.8rem; background: var(--bg-paper); 
+                                    padding: 0.25rem 0.75rem; border-radius: 4px; color: var(--text-secondary);
+                                    border: 1px solid var(--border-soft);
+                                ">${topic}</span>
+                            `).join('')}
+                        </div>
                     </div>
-                    <div class="module-topics">
-                        ${module.topics.map(topic => `
-                            <span class="topic-chip">${topic}</span>
-                        `).join('')}
-                    </div>
-                </div>
-            `).join('');
-        }
+                `).join('')}
+            </div>
+        `;
 
-        this.showDetailView();
+        // Switch Views
+        if (this.dashboardContainer) {
+            this.dashboardContainer.style.display = 'none';
+            this.dashboardContainer.classList.add('hidden');
+        }
+        this.detailContainer.style.display = 'block';
+        window.scrollTo(0, 0);
     }
 
     showDashboard() {
-        if (this.dashboardView && this.detailView) {
-            this.detailView.classList.add('hidden');
-            this.dashboardView.classList.remove('hidden');
-            this.dashboardView.scrollTop = 0;
-
-            this.detailView.style.display = 'none';
-            this.dashboardView.style.display = 'block';
+        if (this.detailContainer) {
+            this.detailContainer.style.display = 'none';
         }
-    }
-
-    showDetailView() {
-        if (this.dashboardView && this.detailView) {
-            this.dashboardView.classList.add('hidden');
-            this.detailView.classList.remove('hidden');
-
-            this.dashboardView.style.display = 'none';
-            this.detailView.style.display = 'block';
-
-            this.container.scrollTop = 0;
+        if (this.dashboardContainer) {
+            this.dashboardContainer.style.display = 'block';
+            this.dashboardContainer.classList.remove('hidden');
         }
+        window.scrollTo(0, 0);
     }
 }
