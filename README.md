@@ -7,8 +7,6 @@
 
 **DSA Study Sanctuary** is an interactive, visually immersive platform designed to help students and developers master Data Structures and Algorithms. Unlike static textbooks, this project brings algorithms to life through dynamic visualizations, audio sonification, and step-by-step narrative breakdowns.
 
-![Project Banner](public/favicon.svg) <!-- Replace with a real banner functionality later -->
-
 ## 🚀 Features
 
 -   **⚡ Interactive Visualizations**: Real-time sorting, searching, and pathfinding visualizations.
