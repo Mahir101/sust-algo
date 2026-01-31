@@ -747,6 +747,18 @@
         E-Lectures
         <span class="nav-item-badge" style="background: white; color: #667eea">Learn</span>
       </button>
+
+      <div
+        style="margin-top: 2rem; margin-bottom: 0.5rem; padding-left: 0.75rem; font-size: 0.7rem; text-transform: uppercase; color: var(--text-muted); letter-spacing: 0.05em; font-weight: 600;">
+        University
+      </div>
+      <button class="nav-item subjects-nav-btn" data-section="cs-subjects"
+        style="background: linear-gradient(135deg, #FF0080, #7928CA); color: white; margin-bottom: 0.5rem; box-shadow: 0 4px 15px rgba(255, 0, 128, 0.3);">
+        <span class="nav-item-icon" aria-hidden="true">🏛️</span>
+        CS Subjects
+        <span class="nav-item-badge" style="background: black; color: white">ALL</span>
+      </button>
+
       <button class="nav-item leetcode-nav-btn" data-section="leetcode-patterns"
         style="background: linear-gradient(135deg, #FF9800, #F44336); color: white; margin-top: 0.5rem; box-shadow: 0 4px 15px rgba(255, 152, 0, 0.3);">
         <span class="nav-item-icon" aria-hidden="true">🧠</span>
@@ -9187,6 +9199,254 @@ WHERE condition;</pre>
       </div>
     </section>
 
+
+    <!-- ═══════════════════════════════════════════════════════════════════════
+       SECTION: CS SUBJECTS (COURSE CATALOG)
+       ═══════════════════════════════════════════════════════════════════════ -->
+    <section id="section-subjects" class="subjects-container hidden"
+      style="display: none; height: 100vh; overflow-y: auto; padding: 2rem;">
+      <!-- Dashboard View -->
+      <div class="subjects-dashboard">
+        <div class="sub-welcome-header" style="text-align: center; margin-bottom: 3rem;">
+          <h1
+            style="font-size: 3.5rem; font-weight: 800; background: linear-gradient(135deg, #FFF, #AAA); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 1rem;">
+            Course Study Sanctuary
+          </h1>
+          <p style="color: var(--text-secondary); font-size: 1.2rem; max-width: 600px; margin: 0 auto;">
+            A comprehensive curriculum covering the fundamental pillars of Computer Science.
+          </p>
+        </div>
+
+        <div class="subjects-grid">
+          <!-- Cards injected by JS -->
+        </div>
+      </div>
+
+      <!-- Detail View (Hidden Initially) -->
+      <div class="subject-detail-view hidden" style="display: none;">
+        <div class="subject-detail-header">
+          <!-- Header injected by JS -->
+        </div>
+        <div class="subject-detail-content">
+          <!-- Modules injected by JS -->
+        </div>
+      </div>
+    </section>
+
+    <style>
+      /* --- CS Subjects Styles --- */
+      .subjects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 2rem;
+        padding-bottom: 4rem;
+        max-width: 1400px;
+        margin: 0 auto;
+      }
+
+      .subject-card {
+        position: relative;
+        background: rgba(255, 255, 255, 0.03);
+        border-radius: 24px;
+        padding: 2rem;
+        cursor: pointer;
+        overflow: hidden;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .subject-card:hover {
+        transform: translateY(-10px) scale(1.02);
+        background: rgba(255, 255, 255, 0.06);
+        border-color: rgba(255, 255, 255, 0.2);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+      }
+
+      .subject-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 6px;
+        background: var(--sub-gradient);
+      }
+
+      .sub-icon {
+        font-size: 3.5rem;
+        margin-bottom: 1.5rem;
+        filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+      }
+
+      .sub-title {
+        font-size: 1.8rem;
+        font-weight: 700;
+        margin-bottom: 0.75rem;
+        color: var(--text-primary);
+      }
+
+      .sub-desc {
+        color: var(--text-secondary);
+        line-height: 1.6;
+        flex-grow: 1;
+        margin-bottom: 1.5rem;
+      }
+
+      .sub-meta {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        font-size: 0.9rem;
+        color: var(--text-muted);
+        background: rgba(0, 0, 0, 0.2);
+        padding: 0.5rem 1rem;
+        border-radius: 50px;
+        width: fit-content;
+      }
+
+      /* Detail View Styles */
+      .sub-back-btn {
+        background: none;
+        border: none;
+        color: var(--text-secondary);
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        cursor: pointer;
+        padding: 1rem 0;
+        font-size: 1rem;
+        transition: color 0.2s;
+      }
+
+      .sub-back-btn:hover {
+        color: var(--text-primary);
+      }
+
+      .subject-detail-header {
+        position: relative;
+        padding: 3rem;
+        border-radius: 24px;
+        background: var(--bg-card);
+        overflow: hidden;
+        margin-bottom: 3rem;
+        border: 1px solid var(--border-soft);
+      }
+
+      .sub-header-content {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+      }
+
+      .sub-header-icon {
+        font-size: 5rem;
+      }
+
+      .sub-header-title {
+        font-size: 3rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .sub-header-desc {
+        font-size: 1.2rem;
+        color: var(--text-secondary);
+        max-width: 800px;
+      }
+
+      .sub-header-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        filter: blur(60px);
+      }
+
+      .subject-detail-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 2rem;
+      }
+
+      .module-card {
+        background: var(--bg-paper);
+        border-radius: 16px;
+        padding: 1.5rem;
+        border: 1px solid var(--border-subtle);
+        transition: transform 0.2s;
+      }
+
+      .module-card:hover {
+        transform: translateY(-3px);
+        border-color: var(--border-soft);
+      }
+
+      .module-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 1rem;
+      }
+
+      .module-idx {
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: var(--text-muted);
+      }
+
+      .module-title {
+        font-size: 1.2rem;
+        color: var(--text-primary);
+        margin-top: 0.25rem;
+      }
+
+      .module-topics {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+
+      .topic-chip {
+        background: rgba(255, 255, 255, 0.05);
+        padding: 0.35rem 0.75rem;
+        border-radius: 6px;
+        font-size: 0.85rem;
+        color: var(--text-secondary);
+        border: 1px solid transparent;
+      }
+
+      .topic-chip:hover {
+        background: rgba(255, 255, 255, 0.1);
+        border-color: rgba(255, 255, 255, 0.1);
+        color: var(--text-primary);
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .fade-in-up {
+        animation: fadeInUp 0.5s ease-out forwards;
+        opacity: 0;
+      }
+    </style>
+
     <!-- ALGORITHMS MIDTERM SOLUTIONS -->
     <section id="section-algo-midterm-solutions" class="section-hidden animate-in"
       aria-label="Algorithms Midterm Solutions">
@@ -9223,10 +9483,12 @@ WHERE condition;</pre>
 
   <script type="module">
     import { LeetCodeLoader } from './src/assets/leetcode-loader.js';
+    import { SubjectsLoader } from './src/assets/subjects-loader.js';
 
     document.addEventListener('DOMContentLoaded', () => {
-      // Initialize LeetCode Loader
+      // Initialize Loaders
       new LeetCodeLoader();
+      new SubjectsLoader();
 
       // Handle navigation to LeetCode section
       const lcBtn = document.querySelector('.leetcode-nav-btn');
@@ -9248,6 +9510,26 @@ WHERE condition;</pre>
           // Update active state in sidebar
           document.querySelectorAll('.nav-item').forEach(btn => btn.classList.remove('active'));
           lcBtn.classList.add('active');
+        });
+      }
+
+      // Handle navigation to Subjects section
+      const subBtn = document.querySelector('.subjects-nav-btn');
+      if (subBtn) {
+        subBtn.addEventListener('click', () => {
+          document.querySelectorAll('.dashboard-container, .sorting-dashboard, .grid-container, .graph-container, .algo-race-container, .electure-container, .algo-midterm-solutions-container, .algo-final-solutions-container, .ds-container, .leetcode-container, .subjects-container').forEach(el => {
+            el.style.display = 'none';
+            el.classList.add('hidden');
+          });
+
+          const subSection = document.getElementById('section-subjects');
+          if (subSection) {
+            subSection.style.display = 'block';
+            subSection.classList.remove('hidden');
+          }
+
+          document.querySelectorAll('.nav-item').forEach(btn => btn.classList.remove('active'));
+          subBtn.classList.add('active');
         });
       }
     });
