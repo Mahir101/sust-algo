@@ -1,11 +1,11 @@
-# 📚 DSA Study Sanctuary
+# 📚 Course Study Sanctuary
 
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Vite](https://img.shields.io/badge/built%20with-Vite-646CFF.svg)
 ![JavaScript](https://img.shields.io/badge/language-JavaScript-F7DF1E.svg)
 ![Status](https://img.shields.io/badge/status-active-success.svg)
 
-**DSA Study Sanctuary** is an interactive, visually immersive platform designed to help students and developers master Data Structures and Algorithms. Unlike static textbooks, this project brings algorithms to life through dynamic visualizations, audio sonification, and step-by-step narrative breakdowns.
+**Course Study Sanctuary** is an interactive, visually immersive platform designed to help students and developers master Data Structures and Algorithms. Unlike static textbooks, this project brings algorithms to life through dynamic visualizations, audio sonification, and step-by-step narrative breakdowns.
 
 ## 🚀 Features
 
