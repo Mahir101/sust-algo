@@ -1,0 +1,189 @@
+/**
+ * @module Base.Variables
+ * @description CSS variables for themes, colors, and core design tokens.
+ * @layer Base (1)
+ */
+
+/* ===== THEME SYSTEM ===== */
+:root {
+  /* Default Theme - NOW ENFORCED AS SUNSET/PREMIUM */
+  --bg-warm: #f4f4f5; /* Zinc 100 */
+  --bg-cream: #ffffff;
+  --bg-card: #ffffff;
+  --bg-paper: #fafafa; /* Zinc 50 */
+  --bg-sidebar: #27272a; /* Zinc 800 */
+  --text-dark: #18181b; /* Zinc 900 */
+  --text-body: #3f3f46; /* Zinc 700 */
+  --text-muted: #71717a; /* Zinc 500 */
+  --text-light: #f4f4f5;
+  
+  /* Copper Accents (Sunset Default) */
+  --accent-forest: #b45309; /* Deep Copper */
+  --accent-sage: #d97706; /* Bright Copper */
+  --accent-amber: #f59e0b; /* Gold */
+  --accent-coral: #be123c; /* Rose */
+  --accent-sky: #0ea5e9; /* Sky */
+  --accent-plum: #a21caf;
+  
+  --border-soft: #e4e4e7; /* Zinc 200 */
+  --shadow-warm: rgba(180, 83, 9, 0.08);
+  --shadow-deep: rgba(180, 83, 9, 0.15);
+  --focus-ring: rgba(180, 83, 9, 0.4);
+  
+  --canvas-bg: linear-gradient(180deg, #ffffff 0%, #f4f4f5 100%);
+  --canvas-bar: #b45309;
+
+  /* Accessibility toggles */
+  --hc-bg-card: #ffffff;
+  --hc-text-dark: #09090b;
+  --hc-text-body: #18181b;
+  --hc-border: #71717a;
+
+  --theme-transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ===== DARK THEME - Forest Dark (matches default theme) ===== */
+/* ===== DARK THEME - Matches Sunset Dark ===== */
+[data-theme="dark"] {
+  --bg-warm: #000000; /* Pure Black */
+  --bg-cream: #09090b; /* Zinc 950 */
+  --bg-card: #09090b;
+  --bg-paper: #18181b; /* Zinc 900 */
+  --bg-sidebar: #000000;
+  
+  --text-dark: #fafafa;
+  --text-body: #e4e4e7;
+  --text-muted: #a1a1aa;
+  
+  /* Blue & Gold Accents */
+  --accent-forest: #3b82f6; /* Royal Blue */
+  --accent-sage: #60a5fa; /* Lighter Blue */
+  --accent-amber: #ffd700; /* Pure Gold */
+  --accent-coral: #ef4444; /* Red */
+  --accent-sky: #0ea5e9; /* Cyan */
+  --accent-plum: #d8b4fe;
+  
+  --border-soft: #27272a; /* Zinc 800 */
+  
+  /* Gold glow for shadows in dark mode */
+  --shadow-warm: rgba(59, 130, 246, 0.15);
+  --shadow-deep: rgba(59, 130, 246, 0.3);
+  
+  --focus-ring: rgba(59, 130, 246, 0.5);
+  
+  --canvas-bg: linear-gradient(180deg, #09090b 0%, #000000 100%);
+  --canvas-bar: #3b82f6;
+}
+
+/* ===== PREMIUM THEME (Copper & Gold) ===== */
+/* Light: Minimalist White/Grey with Copper Accents */
+[data-color-theme="sunset"] {
+  --bg-warm: #f4f4f5; /* Zinc 100 */
+  --bg-cream: #ffffff;
+  --bg-card: #ffffff;
+  --bg-paper: #fafafa; /* Zinc 50 */
+  --bg-sidebar: #27272a; /* Zinc 800 */
+  --text-dark: #18181b; /* Zinc 900 */
+  --text-body: #3f3f46; /* Zinc 700 */
+  --text-muted: #71717a; /* Zinc 500 */
+  --text-light: #f4f4f5;
+  
+  /* Copper Accents */
+  --accent-forest: #b45309; /* Deep Copper */
+  --accent-sage: #d97706; /* Bright Copper */
+  --accent-amber: #f59e0b; /* Gold (for warnings) */
+  --accent-coral: #be123c; /* Rose (for errors) */
+  --accent-sky: #0ea5e9; /* Sky blue */
+  --accent-plum: #a21caf;
+  
+  --border-soft: #e4e4e7; /* Zinc 200 */
+  --shadow-warm: rgba(180, 83, 9, 0.08);
+  --shadow-deep: rgba(180, 83, 9, 0.15);
+  --focus-ring: rgba(180, 83, 9, 0.4);
+  
+  --canvas-bg: linear-gradient(180deg, #ffffff 0%, #f4f4f5 100%);
+  --canvas-bar: #b45309;
+}
+
+/* Dark: Luxury Black with Blue & Gold Accents */
+[data-color-theme="sunset"][data-theme="dark"] {
+  --bg-warm: #000000; /* Pure Black */
+  --bg-cream: #09090b; /* Zinc 950 */
+  --bg-card: #09090b;
+  --bg-paper: #18181b; /* Zinc 900 */
+  --bg-sidebar: #000000;
+  
+  --text-dark: #fafafa;
+  --text-body: #e4e4e7;
+  --text-muted: #a1a1aa;
+  
+  /* Blue & Gold Accents */
+  --accent-forest: #3b82f6; /* Royal Blue */
+  --accent-sage: #60a5fa; /* Lighter Blue */
+  --accent-amber: #ffd700; /* Pure Gold */
+  --accent-coral: #ef4444; /* Red */
+  --accent-sky: #0ea5e9; /* Cyan */
+  --accent-plum: #d8b4fe;
+  
+  --border-soft: #27272a; /* Zinc 800 */
+  
+  /* Gold glow for shadows in dark mode */
+  --shadow-warm: rgba(59, 130, 246, 0.15);
+  --shadow-deep: rgba(59, 130, 246, 0.3);
+  
+  --focus-ring: rgba(59, 130, 246, 0.5);
+  
+  --canvas-bg: linear-gradient(180deg, #09090b 0%, #000000 100%);
+  --canvas-bar: #3b82f6;
+}
+
+/* Ocean Theme Removed - Sunset Enforced */
+
+/* ===== SECTION ACCENT COLORS ===== */
+[data-section-accent="algorithms"] {
+  --section-accent: var(--accent-forest);
+}
+
+[data-section-accent="pathfinding"] {
+  --section-accent: var(--accent-sky);
+}
+
+[data-section-accent="sql"] {
+  --section-accent: var(--accent-amber);
+}
+
+[data-section-accent="recursion"] {
+  --section-accent: var(--accent-plum);
+}
+
+[data-section-accent="bigo"] {
+  --section-accent: var(--accent-coral);
+}
+
+[data-section-accent="ds"] {
+  --section-accent: var(--accent-sage);
+}
+
+/* ===== SMOOTH THEME TRANSITIONS ===== */
+body,
+.paper-card,
+.viz-container,
+.btn,
+.nav-item,
+.sidebar,
+.input-field,
+.select-field,
+.badge,
+.story-card,
+.challenge-card,
+.solution-card,
+.notebook-card,
+.metaphor-box,
+.sound-toggle,
+.preset-btn {
+  transition:
+    background var(--theme-transition),
+    color var(--theme-transition),
+    border-color var(--theme-transition),
+    box-shadow var(--theme-transition);
+}

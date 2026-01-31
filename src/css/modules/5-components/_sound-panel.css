@@ -1,0 +1,94 @@
+/**
+ * @module Components.SoundPanel
+ * @description Controls for sound themes and volume.
+ * @layer Components (5)
+ */
+
+/* ===== SOUND PANEL ===== */
+.sound-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1.25rem;
+  background: var(--bg-paper);
+  border: 2px solid var(--border-soft);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+  user-select: none;
+}
+
+.sound-toggle:hover {
+  border-color: var(--accent-forest);
+}
+
+.sound-toggle.active {
+  background: rgba(61, 107, 92, 0.15); /* Solid subtle background */
+  border-color: var(--accent-forest);
+}
+
+.sound-toggle .icon {
+  font-size: 1.5rem;
+}
+
+.sound-toggle .label {
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.sound-toggle .preset {
+  font-size: 0.8rem;
+  color: var(--accent-forest);
+  background: rgba(61, 107, 92, 0.15);
+  padding: 0.2rem 0.6rem;
+  border-radius: 6px;
+  font-weight: 700;
+}
+
+.sound-presets {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-top: 0.75rem;
+}
+
+.preset-btn {
+  padding: 0.5rem 1rem;
+  border: 2px solid var(--border-soft);
+  border-radius: 10px;
+  background: var(--bg-card);
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 700;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.preset-btn:hover {
+  border-color: var(--accent-sage);
+  transform: translateY(-1px);
+}
+
+.preset-btn.active {
+  background: var(--accent-forest); /* Solid color, no gradient */
+  color: white;
+  border-color: var(--accent-forest);
+}
+
+.volume-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+
+.volume-row .vol-label {
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  min-width: 70px;
+}

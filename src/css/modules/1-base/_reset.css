@@ -1,0 +1,52 @@
+/**
+ * @module Base.Reset
+ * @description Global box-sizing, body reset, and focus styles.
+ * @layer Base (1)
+ */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Inter", system-ui, sans-serif;
+  background: var(--bg-warm);
+  color: var(--text-dark);
+  min-height: 100vh;
+  line-height: 1.7;
+  display: flex;
+}
+
+strong,
+b {
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+
+
+*:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--focus-ring);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-paper);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-soft);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}

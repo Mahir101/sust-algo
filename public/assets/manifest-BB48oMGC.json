@@ -1,0 +1,18 @@
+{
+  "name": "DSA Study Sanctuary",
+  "short_name": "DSA Helper",
+  "description": "Learn Data Structures & Algorithms with interactive visualizations",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#fdfbf5",
+  "theme_color": "#2f6a57",
+  "icons": [
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📚</text></svg>",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ],
+  "categories": ["education", "productivity"],
+  "orientation": "any"
+}

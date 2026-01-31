@@ -1,0 +1,110 @@
+/**
+ * @module Components.HelpModal
+ * @description Keyboard shortcuts and help modal.
+ * @layer Components (5)
+ */
+
+/* Keyboard Help Modal */
+.keyboard-help-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 10005;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.keyboard-help-modal.active {
+  display: flex;
+}
+
+.keyboard-help-content {
+  background: linear-gradient(
+    135deg,
+    rgba(30, 30, 50, 0.98),
+    rgba(20, 20, 35, 0.98)
+  );
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  border-radius: 16px;
+  padding: 2rem;
+  max-width: 400px;
+  width: 90%;
+}
+
+.help-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.help-header h2 {
+  margin: 0;
+  color: white;
+  font-size: 1.4rem;
+}
+
+/* Close Button (Flat) */
+.help-close {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px; /* Squircle */
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.help-close:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.shortcuts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.shortcut-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.shortcut-item kbd {
+  min-width: 60px;
+  padding: 0.4rem 0.75rem;
+  background: rgba(99, 102, 241, 0.2);
+  border: 1px solid rgba(99, 102, 241, 0.4);
+  border-radius: 6px;
+  color: #a5b4fc;
+  font-family: "Fira Code", monospace;
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+.shortcut-item span {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+}
+
+.help-tip {
+  margin-top: 1.5rem;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.8rem;
+}
+
+.help-tip kbd {
+  padding: 0.2rem 0.5rem;
+  background: rgba(99, 102, 241, 0.2);
+  border-radius: 4px;
+  color: #a5b4fc;
+}

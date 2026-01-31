@@ -1,0 +1,113 @@
+/**
+ * @module Elements.Badges
+ * @description Status indicators and labels.
+ * @layer Elements (3)
+ */
+
+/* ===== BADGES ===== */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.4rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+
+.badge-green {
+  background: rgba(61, 107, 92, 0.15);
+  color: var(--accent-forest);
+}
+
+
+.badge-amber {
+  background: rgba(212, 168, 83, 0.2);
+  color: #8a6a28;
+}
+
+.badge-coral {
+  background: rgba(224, 122, 95, 0.15);
+  color: var(--accent-coral);
+}
+
+.badge-sky {
+  background: rgba(91, 139, 160, 0.15);
+  color: var(--accent-sky);
+}
+
+.badge-plum {
+  background: rgba(139, 104, 127, 0.15);
+  color: var(--accent-plum);
+}
+
+/* Difficulty Level Badges */
+.badge-easy {
+  background: linear-gradient(
+    135deg,
+    rgba(30, 143, 94, 0.15),
+    rgba(30, 143, 94, 0.25)
+  );
+  color: #1b7a4f;
+  border: 1px solid rgba(30, 143, 94, 0.3);
+}
+
+.badge-medium {
+  background: linear-gradient(
+    135deg,
+    rgba(196, 148, 42, 0.15),
+    rgba(196, 148, 42, 0.25)
+  );
+  color: #8a6a1f;
+  border: 1px solid rgba(196, 148, 42, 0.3);
+}
+
+.badge-hard {
+  background: linear-gradient(
+    135deg,
+    rgba(212, 89, 63, 0.15),
+    rgba(212, 89, 63, 0.25)
+  );
+  color: #b8432a;
+  border: 1px solid rgba(212, 89, 63, 0.3);
+}
+
+/* Dark mode difficulty badges */
+[data-theme="dark"] .badge-easy {
+  background: rgba(94, 237, 181, 0.2);
+  color: #5eedb5;
+  border-color: rgba(94, 237, 181, 0.4);
+}
+
+[data-theme="dark"] .badge-medium {
+  background: rgba(255, 217, 122, 0.2);
+  color: #ffd97a;
+  border-color: rgba(255, 217, 122, 0.4);
+}
+
+[data-theme="dark"] .badge-hard {
+  background: rgba(255, 153, 128, 0.2);
+  color: #ff9980;
+  border-color: rgba(255, 153, 128, 0.4);
+}
+
+.badge-time {
+  background: var(--bg-paper);
+  color: var(--text-muted);
+  border: 1px solid var(--border-soft);
+}
+
+.step-indicator {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--accent-forest);
+  color: white;
+  font-weight: 900;
+  font-size: 0.9rem;
+  margin-right: 0.75rem;
+  flex-shrink: 0;
+}

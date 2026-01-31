@@ -1,0 +1,87 @@
+/**
+ * @module Components.CommandPalette
+ * @description Quick action command menu.
+ * @layer Components (5)
+ */
+
+/* Command Palette */
+.command-palette-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 99998;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 15vh;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+}
+
+.command-palette-overlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.command-palette {
+  background: var(--bg-card);
+  border-radius: 16px;
+  width: 100%;
+  max-width: 550px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+}
+
+.command-palette-input {
+  width: 100%;
+  padding: 1.25rem 1.5rem;
+  border: none;
+  border-bottom: 1px solid var(--border-soft);
+  font-size: 1.1rem;
+  background: transparent;
+  color: var(--text-dark);
+  outline: none;
+}
+
+.command-palette-input::placeholder {
+  color: var(--text-muted);
+}
+
+.command-palette-results {
+  max-height: 350px;
+  overflow-y: auto;
+}
+
+.command-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.875rem 1.5rem;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.command-item:hover,
+.command-item.selected {
+  background: var(--bg-paper);
+}
+
+.command-item-icon {
+  font-size: 1.25rem;
+}
+
+.command-item-text {
+  flex: 1;
+  font-weight: 500;
+  color: var(--text-dark);
+}
+
+.command-item-shortcut {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-family: "JetBrains Mono", monospace;
+  background: var(--bg-paper);
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+}

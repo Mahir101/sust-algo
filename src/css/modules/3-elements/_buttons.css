@@ -1,0 +1,222 @@
+/**
+ * @module Elements.Buttons
+ * @description Premium Glass/Depth button styles.
+ * @layer Elements (3)
+ * @style Premium Glass (No Weird Gradients)
+ */
+
+/* ===== BUTTONS (PREMIUM CHISELED) ===== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  border-radius: 10px; /* Tighter radius for precision */
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  
+  /* The "Chiseled" Base Physics */
+  background: var(--bg-paper);
+  border: 1px solid rgba(0,0,0,0.1);
+  border-bottom-color: rgba(0,0,0,0.2); /* Deeper bottom for weight */
+  box-shadow: 
+    0 2px 4px rgba(0,0,0,0.05),
+    inset 0 1px 0 rgba(255,255,255,0.1); /* Sharp top highlight */
+    
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  font-family: inherit;
+  user-select: none;
+  position: relative;
+  overflow: hidden;
+  color: var(--text-body);
+}
+
+.btn:active {
+  transform: translateY(1px);
+  box-shadow: 
+    0 1px 1px rgba(0,0,0,0.05),
+    inset 0 2px 4px rgba(0,0,0,0.05);
+  border-color: rgba(0,0,0,0.15);
+}
+
+/* Primary Action (Play - Clean Green) */
+.btn-primary {
+  background: var(--accent-forest);
+  color: white;
+  border: 1px solid rgba(0,0,0,0.1);
+  border-bottom-color: rgba(0,0,0,0.2);
+  text-shadow: 0 1px 1px rgba(0,0,0,0.2);
+  box-shadow: 
+    0 2px 4px rgba(45, 106, 79, 0.2), 
+    inset 0 1px 0 rgba(255,255,255,0.2);
+}
+
+.btn-primary:hover {
+  background: color-mix(in srgb, var(--accent-forest), white 8%);
+  transform: translateY(-1px);
+  box-shadow: 
+    0 4px 8px rgba(45, 106, 79, 0.25), 
+    inset 0 1px 0 rgba(255,255,255,0.25);
+}
+
+.btn-primary:active {
+  transform: translateY(1px);
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* Secondary / Outline (Ghost) */
+.btn-secondary {
+  background: var(--bg-card);
+  color: var(--text-muted);
+  border-color: var(--border-soft);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.btn-secondary:hover {
+  background: var(--bg-warm);
+  color: var(--text-dark);
+  border-color: var(--text-muted);
+  transform: translateY(-1px);
+}
+
+/* Accent (Pause/Action - Amber) */
+.btn-accent {
+  background: var(--accent-amber);
+  color: white;
+  border: 1px solid rgba(0,0,0,0.1);
+  border-bottom-color: rgba(0,0,0,0.2);
+  text-shadow: 0 1px 1px rgba(0,0,0,0.2);
+  box-shadow: 
+    0 2px 4px rgba(245, 158, 11, 0.2), 
+    inset 0 1px 0 rgba(255,255,255,0.2);
+}
+
+.btn-accent:hover {
+  background: color-mix(in srgb, var(--accent-amber), white 10%);
+  transform: translateY(-1px);
+}
+
+/* Destructive / Reset (Clean Red) */
+.btn-coral {
+  background: var(--accent-coral);
+  color: white;
+  border: 1px solid rgba(0,0,0,0.1);
+  border-bottom-color: rgba(0,0,0,0.2);
+  text-shadow: 0 1px 1px rgba(0,0,0,0.2);
+  box-shadow: 
+    0 2px 4px rgba(239, 68, 68, 0.2), 
+    inset 0 1px 0 rgba(255,255,255,0.2);
+}
+
+.btn-coral:hover {
+  background: color-mix(in srgb, var(--accent-coral), white 10%);
+  transform: translateY(-1px);
+}
+
+/* Icons within buttons */
+.btn-icon {
+  width: 40px; /* Tighter footprint */
+  height: 40px;
+  padding: 0;
+  font-size: 1.1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px; /* Consistent squarcle */
+}
+
+/* Dark Mode Overrides for Depth */
+[data-theme="dark"] .btn-secondary {
+  background: rgba(255,255,255,0.03);
+  border-color: rgba(255,255,255,0.1);
+}
+
+[data-theme="dark"] .btn-secondary:hover {
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(255,255,255,0.3);
+}
+
+/* Insert (Green Glass) */
+.op-insert {
+  background: rgba(16, 185, 129, 0.1);
+  border-color: rgba(16, 185, 129, 0.2);
+  color: #34d399;
+}
+
+.op-insert:hover {
+  background: rgba(16, 185, 129, 0.2);
+  border-color: #34d399;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2);
+}
+
+/* Delete (Red Glass) */
+.op-delete {
+  background: rgba(244, 63, 94, 0.1);
+  border-color: rgba(244, 63, 94, 0.2);
+  color: #fb7185;
+}
+
+.op-delete:hover {
+  background: rgba(244, 63, 94, 0.2);
+  border-color: #fb7185;
+  box-shadow: 0 4px 12px rgba(244, 63, 94, 0.2);
+}
+
+/* Search (Sky Glass) */
+.op-search {
+  background: rgba(14, 165, 233, 0.1);
+  border-color: rgba(14, 165, 233, 0.2);
+  color: #38bdf8;
+}
+
+.op-search:hover {
+  background: rgba(14, 165, 233, 0.2);
+  border-color: #38bdf8;
+  box-shadow: 0 4px 12px rgba(14, 165, 233, 0.2);
+}
+
+/* Peek (Purple Glass) */
+.op-peek {
+  background: rgba(139, 92, 246, 0.1);
+  border-color: rgba(139, 92, 246, 0.2);
+  color: #a78bfa;
+}
+
+.op-peek:hover {
+  background: rgba(139, 92, 246, 0.2);
+  border-color: #a78bfa;
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.2);
+}
+
+/* Dashboard Button (Large) */
+.dashboard-btn {
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+.dashboard-btn:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Stats Badges match Glass */
+.stat-badge {
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  background: rgba(0,0,0,0.2);
+  font-size: 0.75rem;
+  border: 1px solid rgba(255,255,255,0.05);
+}

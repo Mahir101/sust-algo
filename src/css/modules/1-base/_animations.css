@@ -1,0 +1,231 @@
+/**
+ * @module Base.Animations
+ * @description Animation keyframes, timing functions, and reusable motion classes.
+ * @layer Base (1)
+ */
+
+/* Animation Timing Variables */
+:root {
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  --duration-instant: 100ms;
+  --duration-fast: 200ms;
+  --duration-normal: 300ms;
+  --duration-slow: 500ms;
+  --stagger-delay: 50ms;
+}
+
+/* Reusable Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  20%,
+  60% {
+    transform: translateX(-5px);
+  }
+
+  40%,
+  80% {
+    transform: translateX(5px);
+  }
+}
+
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Animation Utility Classes */
+.animate-fade-in {
+  animation: fadeIn var(--duration-normal) var(--ease-out-expo);
+}
+
+.animate-slide-up {
+  animation: slideInUp var(--duration-normal) var(--ease-out-expo);
+}
+
+.animate-slide-left {
+  animation: slideInLeft var(--duration-normal) var(--ease-out-expo);
+}
+
+.animate-scale {
+  animation: scaleIn var(--duration-fast) var(--ease-spring);
+}
+
+.animate-shake {
+  animation: shake 0.5s var(--ease-in-out);
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Staggered Children Animation */
+.stagger-children > * {
+  opacity: 0;
+  animation: slideInUp var(--duration-normal) var(--ease-out-expo) forwards;
+}
+
+.stagger-children > *:nth-child(1) {
+  animation-delay: calc(var(--stagger-delay) * 1);
+}
+
+.stagger-children > *:nth-child(2) {
+  animation-delay: calc(var(--stagger-delay) * 2);
+}
+
+.stagger-children > *:nth-child(3) {
+  animation-delay: calc(var(--stagger-delay) * 3);
+}
+
+.stagger-children > *:nth-child(4) {
+  animation-delay: calc(var(--stagger-delay) * 4);
+}
+
+.stagger-children > *:nth-child(5) {
+  animation-delay: calc(var(--stagger-delay) * 5);
+}
+
+/* Micro-Animation Keyframes */
+@keyframes stepEnter {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes btnPress {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(0.95);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes progressShimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes highlightGlow {
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes waveAnim {
+  0%,
+  100% {
+    transform: scaleY(0.5);
+  }
+
+  50% {
+    transform: scaleY(1);
+  }
+}
+
+@keyframes completionPop {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+
+  60% {
+    transform: scale(1.05);
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+/* Scroll Animation Classes */
+.controls-hidden {
+  transform: translateY(-200%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+#topRightControls {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
+  will-change: transform, opacity;
+}

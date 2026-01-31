@@ -1,0 +1,56 @@
+/**
+ * @module Components.AIBubble
+ * @description Floating AI assistant chat interface.
+ * @layer Components (5)
+ */
+
+/* AI Assistant Chat Bubble */
+.ai-assistant-bubble {
+  position: fixed;
+  bottom: 6rem;
+  right: 2rem;
+  background: var(--bg-card);
+  border: 2px solid var(--border-soft);
+  border-radius: 20px 20px 4px 20px;
+  padding: 1rem 1.25rem;
+  max-width: 280px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  z-index: 9980;
+  opacity: 0;
+  transform: translateY(10px);
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.ai-assistant-bubble.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.ai-bubble-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: var(--accent-forest);
+  font-size: 0.85rem;
+}
+
+.ai-bubble-text {
+  font-size: 0.9rem;
+  color: var(--text-body);
+  line-height: 1.5;
+}
+
+.ai-bubble-close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: 1rem;
+}

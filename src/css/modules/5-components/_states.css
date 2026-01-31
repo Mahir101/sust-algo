@@ -1,0 +1,26 @@
+/**
+ * @module Components.States
+ * @description Contextual state colors (Success, Error, Warning, Info).
+ * @layer Components (5)
+ */
+
+/* Success/Error States */
+.state-success {
+  background: rgba(46, 213, 115, 0.1);
+  border-color: #2ed573;
+}
+
+.state-error {
+  background: rgba(255, 107, 107, 0.1);
+  border-color: #ff6b6b;
+}
+
+.state-warning {
+  background: rgba(255, 206, 84, 0.1);
+  border-color: #ffce54;
+}
+
+.state-info {
+  background: rgba(102, 126, 234, 0.1);
+  border-color: #667eea;
+}

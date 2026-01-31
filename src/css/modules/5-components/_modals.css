@@ -1,0 +1,13 @@
+/**
+ * @module Components.Modals
+ * @description Generic modal containers and responsive styles.
+ * @layer Components (5)
+ */
+
+/* === RESPONSIVE MODALS === */
+.modal-content {
+  width: clamp(280px, 90vw, 800px);
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: clamp(1rem, 3vw, 2rem);
+}

@@ -1,0 +1,44 @@
+/**
+ * @module Base.Typography
+ * @description Global font settings and heading styles.
+ * @layer Base (1)
+ */
+
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap');
+
+h1,
+h2,
+h3 {
+  font-family: "Manrope", sans-serif;
+  font-weight: 800; /* Chunky & Friendly */
+  letter-spacing: -0.02em;
+  color: var(--text-dark);
+}
+
+h1 {
+  font-size: 2.5rem;
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: 1.875rem;
+  line-height: 1.3;
+}
+
+h3 {
+  font-size: 1.5rem;
+  line-height: 1.4;
+}
+
+/* Dark mode heading enhancement */
+[data-theme="dark"] h1,
+[data-theme="dark"] h2,
+[data-theme="dark"] h3 {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+p {
+  color: var(--text-body);
+  font-size: 1.05rem;
+}

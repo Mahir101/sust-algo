@@ -1,0 +1,17 @@
+/**
+ * @module Components.Settings
+ * @description Settings panel and accessibility controls.
+ * @layer Components (5)
+ */
+
+/* === Settings Panel & Accessibility === */
+
+.settings-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 10010;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}

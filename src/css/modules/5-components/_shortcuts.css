@@ -1,0 +1,30 @@
+/**
+ * @module Components.Shortcuts
+ * @description Keyboard shortcut hints and legends.
+ * @layer Components (5)
+ */
+
+/* Keyboard Shortcut Hints */
+.electure-shortcuts {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.shortcut-hint {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.shortcut-key {
+  padding: 0.2rem 0.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.7rem;
+}

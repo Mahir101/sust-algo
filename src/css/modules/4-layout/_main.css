@@ -1,0 +1,25 @@
+/**
+ * @module Layout.Main
+ * @description Main content area adjustments.
+ * @layer Layout (4)
+ */
+
+/* ===== MAIN CONTENT (FLEX SHELL REFACTOR) ===== */
+body {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden; /* Prevent body scroll, handle inside main-content */
+}
+
+#mainContent,
+.main-content {
+  flex: 1;
+  width: auto; /* Let flex handle width */
+  margin-left: 0 !important; /* Remove legacy fixed margin */
+  height: 100vh;
+  overflow-y: auto; /* Internal scrolling */
+  padding: 5rem 3rem 2rem;
+  position: relative;
+  z-index: 1;
+}

@@ -1,0 +1,26 @@
+/**
+ * @module Base.A11y
+ * @description Accessibility enhancements and reduced motion support.
+ * @layer Base (1)
+ */
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    scroll-behavior: auto !important;
+  }
+
+  .animate-in {
+    animation: none !important;
+  }
+
+  .btn,
+  .nav-item,
+  .preset-btn {
+    transition: none !important;
+  }
+
+  .shimmer-overlay.active {
+    animation: none !important;
+  }
+}

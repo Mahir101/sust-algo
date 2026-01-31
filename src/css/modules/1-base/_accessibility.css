@@ -1,0 +1,88 @@
+/**
+ * @module Base.Accessibility
+ * @description Accessibility support, reduced motion, and high contrast modes.
+ * @layer Base (1)
+ */
+
+/* Reduced Motion Support */
+.reduce-motion *,
+.reduce-motion *::before,
+.reduce-motion *::after {
+  animation-duration: 0.01ms !important;
+  transition-duration: 0.01ms !important;
+}
+
+/* High Contrast Mode */
+.high-contrast {
+  --elearn-primary: #ffffff;
+  --elearn-secondary: #ffff00;
+}
+
+.high-contrast .electure-player,
+.high-contrast .lecture-browser {
+  background: #000000;
+  border-color: #ffffff;
+}
+
+/* Font Size Adjustments */
+body[data-font-size="small"] {
+  font-size: 14px;
+}
+
+body[data-font-size="medium"] {
+  font-size: 16px;
+}
+
+
+body[data-font-size="large"] {
+  font-size: 18px;
+}
+
+/* Screen Reader Only */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Enhanced Focus Styles */
+/* Ensure keyboard-navigable elements have visible focus */
+.command-item:focus-visible,
+.survey-option:focus-visible,
+.course-card:focus-visible,
+.nav-item:focus-visible,
+.op-btn:focus-visible,
+.viz-tab:focus-visible {
+  outline: 2px solid var(--accent-forest);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px var(--focus-ring);
+}
+
+/* Reduced Motion Support (Duplicate ensure) */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* High Contrast Support (Duplicate ensure) */
+@media (prefers-contrast: high) {
+  .btn {
+    border: 2px solid currentColor;
+  }
+
+  :root {
+    --border-soft: #000;
+    --text-muted: #333;
+  }
+}

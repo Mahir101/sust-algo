@@ -1,0 +1,31 @@
+/**
+ * @module Components.Legend
+ * @description Color legend for visualizations.
+ * @layer Components (5)
+ */
+
+/* ===== LEGEND ===== */
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  padding: 1rem;
+  background: var(--bg-card);
+  border-radius: 10px;
+  border: 1px solid var(--border-soft);
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--text-body);
+  font-weight: 650;
+}
+
+.legend-color {
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+}

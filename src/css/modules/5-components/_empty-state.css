@@ -1,0 +1,31 @@
+/**
+ * @module Components.EmptyState
+ * @description State for empty data or content.
+ * @layer Components (5)
+ */
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  padding: 3rem;
+  color: var(--text-muted);
+}
+
+.empty-state-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  opacity: 0.5;
+}
+
+.empty-state-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--text-dark);
+}
+
+.empty-state-text {
+  font-size: 0.9rem;
+  max-width: 300px;
+  margin: 0 auto;
+}

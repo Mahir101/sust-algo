@@ -1,0 +1,79 @@
+/**
+ * @module Components.KeyboardHelp
+ * @description Keyboard shortcuts modal and key styling.
+ * @layer Components (5)
+ */
+
+/* ===== KEYBOARD SHORTCUTS OVERLAY ===== */
+.shortcuts-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s ease;
+}
+
+.shortcuts-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.shortcuts-modal {
+  background: var(--bg-card);
+  border-radius: 20px;
+  padding: 2rem;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.3);
+}
+
+.shortcuts-modal h2 {
+  font-size: 1.25rem;
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.shortcut-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid var(--border-soft);
+}
+
+.shortcut-row:last-child {
+  border-bottom: none;
+}
+
+.shortcut-key {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 32px;
+  padding: 0.25rem 0.5rem;
+  background: var(--bg-paper);
+  border: 1px solid var(--border-soft);
+  border-radius: 6px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.shortcut-desc {
+  color: var(--text-body);
+  font-size: 0.95rem;
+}
+
+.shortcuts-close {
+  margin-top: 1.25rem;
+  width: 100%;
+}

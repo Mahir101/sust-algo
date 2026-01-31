@@ -1,0 +1,188 @@
+/**
+ * @module Components.Cards
+ * @description Card containers (Paper, Story, Challenge, Notebook).
+ * @layer Components (5)
+ */
+
+/* ===== CARDS ===== */
+.paper-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-soft);
+  border-radius: 16px;
+  padding: 2rem;
+  margin-bottom: 1.5rem;
+  box-shadow:
+    0 2px 12px var(--shadow-warm),
+    0 8px 24px var(--shadow-warm);
+  position: relative;
+  overflow: hidden;
+}
+
+.paper-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    var(--accent-forest),
+    var(--accent-sage),
+    var(--accent-amber)
+  );
+}
+
+.paper-card:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 8px 30px var(--shadow-deep),
+    0 4px 12px var(--shadow-warm);
+}
+
+.paper-card:focus-within {
+  box-shadow: 0 0 0 3px var(--focus-ring);
+}
+
+/* Dark mode card adjustments */
+[data-theme="dark"] .story-card {
+  background: linear-gradient(
+    145deg,
+    rgba(255, 207, 112, 0.08) 0%,
+    var(--bg-card) 100%
+  );
+}
+
+[data-theme="dark"] .challenge-card {
+  background: linear-gradient(
+    145deg,
+    rgba(255, 155, 133, 0.08) 0%,
+    var(--bg-card) 100%
+  );
+}
+
+[data-theme="dark"] .solution-card {
+  background: linear-gradient(
+    145deg,
+    rgba(143, 212, 176, 0.08) 0%,
+    var(--bg-card) 100%
+  );
+}
+
+[data-theme="dark"] .notebook-card {
+  background:
+    repeating-linear-gradient(
+      transparent,
+      transparent 31px,
+      rgba(255, 255, 255, 0.05) 31px,
+      rgba(255, 255, 255, 0.05) 32px
+    ),
+    var(--bg-card);
+}
+
+.notebook-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-soft);
+  border-radius: 12px;
+  padding: 1.5rem;
+  position: relative;
+  box-shadow: 0 2px 8px var(--shadow-warm);
+}
+
+.notebook-card::before {
+  display: none;
+}
+
+/* Light Mode Visibility Fix */
+:root:not([data-theme="dark"]) .notebook-card {
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1) !important;
+}
+
+.story-card {
+  background: linear-gradient(145deg, #fff9e8 0%, var(--bg-card) 100%);
+  border: 2px solid var(--accent-amber);
+  border-radius: 20px;
+  padding: 2rem;
+  position: relative;
+  box-shadow: 0 4px 20px rgba(212, 168, 83, 0.15);
+}
+
+.story-card::before {
+  content: "📖";
+  position: absolute;
+  top: -15px;
+  left: 20px;
+  font-size: 1.75rem;
+  background: var(--bg-warm);
+  padding: 0 0.5rem;
+}
+
+.story-title {
+  color: var(--accent-forest);
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.challenge-card {
+  background: linear-gradient(145deg, #fff0ec 0%, var(--bg-card) 100%);
+  border: 2px dashed var(--accent-coral);
+  border-radius: 16px;
+  padding: 1.75rem;
+  position: relative;
+}
+
+
+/* Removed duplicate emoji pseudo-element (User Request) */
+
+.card-content h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: var(--text-heading);
+}
+
+.card-content p {
+  margin: 0.5rem 0 0;
+  font-size: 0.9rem;
+  color: var(--text-body);
+}
+
+/* === RESPONSIVE CARDS === */
+.paper-card,
+.metaphor-box,
+.challenge-card,
+.solution-card,
+.story-card {
+  padding: clamp(1rem, 3vw, 1.5rem);
+}
+
+.metaphor-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.25rem;
+  background: linear-gradient(
+    135deg,
+    rgba(91, 139, 160, 0.1),
+    rgba(123, 163, 140, 0.1)
+  );
+  border-radius: 12px;
+
+  border-left: 4px solid var(--accent-sky);
+  margin-bottom: 1.5rem;
+}
+
+.metaphor-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.metaphor-content h4 {
+  font-family: "Crimson Text", serif;
+  color: var(--accent-sky);
+  margin-bottom: 0.25rem;
+}

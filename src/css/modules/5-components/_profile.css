@@ -1,0 +1,66 @@
+/**
+ * @module Components.Profile
+ * @description User profile card and stats summary.
+ * @layer Components (5)
+ */
+
+/* Profile Card */
+.profile-card {
+  background: var(--bg-card);
+  border-radius: 20px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.profile-avatar {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, var(--accent-forest), var(--accent-sage));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.75rem;
+}
+
+.profile-name {
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.profile-title {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.profile-stats {
+  display: flex;
+  justify-content: space-around;
+  padding: 1rem 0;
+  border-top: 1px solid var(--border-soft);
+  border-bottom: 1px solid var(--border-soft);
+}
+
+.profile-stats .stat {
+  text-align: center;
+}
+
+.profile-stats .stat-value {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--accent-forest);
+}
+
+.profile-stats .stat-label {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}

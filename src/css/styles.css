@@ -1,0 +1,119 @@
+/**
+ * CSE Helper - Main Stylesheet
+ * 
+ * Architecture: ITCSS-inspired (Inverted Triangle CSS)
+ * 1. Base       - Resets, variables, typography, layout
+ * 2. Components - UI components, widgets, feature modules
+ * 3. Utilities  - Helper classes (often inside Base or at the end)
+ */
+
+/* ==========================================================================
+   1. BASE LAYER
+   ========================================================================== */
+@import 'modules/1-base/_reset.css';
+@import 'modules/1-base/_variables.css';
+@import 'modules/1-base/_typography.css';
+@import 'modules/1-base/_layout.css';
+@import 'modules/1-base/_theme.css';
+@import 'modules/1-base/_accessibility.css'; /* Includes focus & reduced motion */
+@import 'modules/1-base/_a11y.css';          /* Additional accessibility utils */
+@import 'modules/1-base/_animations.css';
+@import 'modules/1-base/_utilities.css';
+
+@import 'modules/1-base/_responsive.css';    /* Global responsive overrides */
+
+/* ==========================================================================
+   2. ELEMENTS LAYER (Atomic UI) - Restored
+   ========================================================================== */
+@import 'modules/3-elements/_buttons.css';
+@import 'modules/3-elements/_inputs.css';
+@import 'modules/3-elements/_badges.css';
+
+/* ==========================================================================
+   3. LAYOUT LAYER (Page Structure) - Restored
+   ========================================================================== */
+@import 'modules/3-layout/_sidebar.css';
+@import 'modules/3-layout/_responsive.css';
+@import 'modules/4-layout/_header.css';
+@import 'modules/4-layout/_main.css';
+@import 'modules/4-layout/_dashboard.css';
+
+/* ==========================================================================
+   2. COMPONENT LAYER (Core UI)
+   ========================================================================== */
+@import 'modules/5-components/_buttons.css';
+@import 'modules/5-components/_controls.css';
+@import 'modules/5-components/_input-panel.css';
+@import 'modules/5-components/_cards.css';
+@import 'modules/5-components/_empty-state.css';
+@import 'modules/5-components/_states.css';
+@import 'modules/5-components/_loading.css';
+@import 'modules/5-components/_skeleton.css';
+@import 'modules/5-components/_spinner.css';
+@import 'modules/5-components/_toast.css';
+@import 'modules/5-components/_tooltips.css';
+@import 'modules/5-components/_modals.css';
+@import 'modules/5-components/_mobile-nav.css';
+@import 'modules/5-components/_command-palette.css';
+@import 'modules/5-components/_help-modal.css';
+@import 'modules/5-components/_keyboard-help.css';
+@import 'modules/5-components/_shortcuts.css';
+@import 'modules/5-components/_hints.css';
+@import 'modules/5-components/_legend.css';
+@import 'modules/5-components/_difficulty.css';
+@import 'modules/5-components/_complexity.css';
+@import 'modules/5-components/_sound-panel.css';
+@import 'modules/5-components/_settings.css';
+@import 'modules/5-components/_share.css';
+@import 'modules/5-components/_profile.css';
+@import 'modules/5-components/_ai-bubble.css';
+
+/* ==========================================================================
+   3. FEATURE MODULES
+   ========================================================================== */
+/* Learning & Lectures */
+@import 'modules/5-components/_lecture.css';
+@import 'https://rdpviz.vercel.app/css/modules/5-components/_electures-new.css'; /* Redesigned Hub */
+@import 'https://rdpviz.vercel.app/css/modules/5-components/_lecture-browser.css';
+@import 'https://rdpviz.vercel.app/css/modules/5-components/_sql-lecture.css';
+@import 'https://rdpviz.vercel.app/css/modules/5-components/_concepts.css';
+@import 'https://rdpviz.vercel.app/css/modules/5-components/_learning-path.css';
+@import 'https://rdpviz.vercel.app/css/modules/5-components/_learning-modal.css';
+@import 'https://rdpviz.vercel.app/css/modules/5-components/_course-card.css';
+@import 'https://rdpviz.vercel.app/css/modules/5-components/_steps.css';
+
+/* Editors & Visualization */
+@import 'https://rdpviz.vercel.app/css/modules/5-components/_code-panel.css';
+@import 'https://rdpviz.vercel.app/css/modules/5-components/_sql-editor.css';
+@import 'https://rdpviz.vercel.app/css/modules/5-components/_graph-editor.css';
+@import 'https://rdpviz.vercel.app/css/modules/5-components/_visualizer.css';
+@import 'https://rdpviz.vercel.app/css/modules/5-components/_sorting-layout.css';
+@import 'https://rdpviz.vercel.app/css/modules/5-components/_tracer.css';
+@import 'https://rdpviz.vercel.app/css/modules/5-components/_sandbox.css';
+@import 'https://rdpviz.vercel.app/css/modules/5-components/_tree-viz.css';
+@import 'https://rdpviz.vercel.app/css/modules/5-components/_database.css';
+@import 'https://rdpviz.vercel.app/css/modules/5-components/_search-reference.css';
+
+/* Practice & Gamification */
+@import 'https://rdpviz.vercel.app/css/modules/5-components/_practice.css';
+@import 'https://rdpviz.vercel.app/css/modules/5-components/_quiz.css';
+@import 'https://rdpviz.vercel.app/css/modules/5-components/_multiplayer.css';
+@import 'https://rdpviz.vercel.app/css/modules/5-components/_walkthrough.css';
+@import 'https://rdpviz.vercel.app/css/modules/5-components/_error-analysis.css';
+@import 'https://rdpviz.vercel.app/css/modules/5-components/_gamification.css';
+@import 'https://rdpviz.vercel.app/css/modules/5-components/_achievements.css';
+@import 'https://rdpviz.vercel.app/css/modules/5-components/_streak.css';
+@import 'https://rdpviz.vercel.app/css/modules/5-components/_stats.css';
+@import 'https://rdpviz.vercel.app/css/modules/5-components/_progress-dashboard.css';
+@import 'https://rdpviz.vercel.app/css/modules/5-components/_celebration.css';
+@import 'https://rdpviz.vercel.app/css/modules/5-components/_completion.css';
+@import 'https://rdpviz.vercel.app/css/modules/5-components/_onboarding.css';
+
+@import 'https://rdpviz.vercel.app/css/modules/5-components/_pomodoro.css';
+@import 'https://rdpviz.vercel.app/css/modules/5-components/_theme-premium.css';
+
+/* ==========================================================================
+   4. UTILITIES LAYER
+   ========================================================================== */
+@import 'https://rdpviz.vercel.app/css/modules/6-utilities/_transitions.css';
+@import 'https://rdpviz.vercel.app/css/_emergency_fix.css';

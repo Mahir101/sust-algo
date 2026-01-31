@@ -1,0 +1,72 @@
+/**
+ * @module Layout.Header
+ * @description Standardized page headers and title blocks.
+ * @layer Layout (4)
+ */
+
+/* Course header bar */
+.course-header-bar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 1.5rem;
+  background: var(--bg-paper);
+
+  border-bottom: 1px solid var(--border-soft);
+  margin-bottom: 1rem;
+}
+
+.course-header-title {
+  flex: 1;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.page-header {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid var(--border-soft);
+}
+
+.page-header h1 {
+  margin-bottom: 0.5rem;
+}
+
+
+.page-header p {
+  font-size: 1.1rem;
+  max-width: 700px;
+}
+
+/* ===== TOP RIGHT CONTROLS ===== */
+/* Robust styling to prevent overlap with inline styles */
+#topRightControls {
+  display: flex !important;
+  align-items: center !important;
+  gap: 1rem !important;
+  max-width: 100%;
+  white-space: nowrap;
+}
+
+#topRightControls .theme-toggle {
+  flex-shrink: 0;
+  display: flex !important;
+  align-items: center;
+  gap: 0.5rem;
+  width: auto !important; /* Allow growing */
+  min-width: min-content;
+}
+
+#topRightControls .theme-toggle-label {
+  display: inline-block;
+  min-width: 42px;
+  text-align: right;
+}
+
+/* Color theme dots container */
+#topRightControls > div:last-child {
+  display: flex !important;
+  align-items: center;
+  gap: 0.4rem;
+  flex-shrink: 0;
+}

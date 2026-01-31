@@ -1,0 +1,64 @@
+/**
+ * @module Components.Difficulty
+ * @description Adaptive difficulty selection controls.
+ * @layer Components (5)
+ */
+
+/* Adaptive Difficulty */
+.difficulty-selector {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  background: var(--bg-paper);
+  border-radius: 12px;
+  margin-bottom: 1rem;
+}
+
+.difficulty-btn {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: 2px solid var(--border-soft);
+  background: var(--bg-card);
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: center;
+}
+
+.difficulty-btn:hover {
+  border-color: var(--accent-forest);
+}
+
+.difficulty-btn.active {
+  background: var(--accent-forest);
+  color: white;
+  border-color: var(--accent-forest);
+}
+
+.difficulty-btn.easy {
+  --diff-color: #10b981;
+}
+
+.difficulty-btn.medium {
+  --diff-color: #f59e0b;
+}
+
+.difficulty-btn.hard {
+  --diff-color: #ef4444;
+}
+
+.difficulty-btn.active.easy {
+  background: var(--diff-color);
+  border-color: var(--diff-color);
+}
+
+.difficulty-btn.active.medium {
+  background: var(--diff-color);
+  border-color: var(--diff-color);
+}
+
+.difficulty-btn.active.hard {
+  background: var(--diff-color);
+  border-color: var(--diff-color);
+}

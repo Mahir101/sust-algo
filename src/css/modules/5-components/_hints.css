@@ -1,0 +1,119 @@
+/**
+ * @module Components.Hints
+ * @description Smart AI-powered hint panels.
+ * @layer Components (5)
+ */
+
+/* ===== PHASE 4: AI-POWERED ASSISTANCE ===== */
+
+/* Smart Hint Panel */
+.hint-panel {
+  background: linear-gradient(
+    135deg,
+    rgba(251, 191, 36, 0.1),
+    rgba(245, 158, 11, 0.05)
+  );
+  border: 2px solid rgba(251, 191, 36, 0.3);
+  border-radius: 16px;
+  padding: 1rem 1.25rem;
+  margin: 1rem 0;
+  position: relative;
+}
+
+.hint-panel::before {
+  content: "💡";
+  position: absolute;
+  top: -12px;
+  left: 1rem;
+  background: var(--bg-card);
+  padding: 0 0.5rem;
+  font-size: 1.25rem;
+}
+
+.hint-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.hint-title {
+  font-weight: 700;
+  color: #d97706;
+  font-size: 0.9rem;
+}
+
+.hint-level {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  background: rgba(251, 191, 36, 0.2);
+  border-radius: 6px;
+  color: #92400e;
+}
+
+.hint-content {
+  color: var(--text-body);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.hint-reveal-btn {
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  margin-top: 0.75rem;
+  background: rgba(251, 191, 36, 0.15);
+  border: 1px dashed rgba(251, 191, 36, 0.4);
+  border-radius: 10px;
+  color: #d97706;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+
+.hint-reveal-btn:hover {
+  background: rgba(251, 191, 36, 0.25);
+}
+
+.hint-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+
+.hint-title {
+  font-weight: 600;
+  color: #a5b4fc;
+}
+
+.hint-level {
+  background: rgba(99, 102, 241, 0.3);
+  padding: 0.25rem 0.5rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  color: white;
+}
+
+.hint-content {
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.hint-reveal-btn {
+  width: 100%;
+  padding: 0.75rem;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.hint-reveal-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 20px rgba(99, 102, 241, 0.4);
+}

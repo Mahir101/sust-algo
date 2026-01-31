@@ -1,0 +1,52 @@
+/**
+ * @module Base.Layout
+ * @description Grid systems and layout utilities.
+ * @layer Base (1)
+ */
+
+/* Professional Asymmetric Grid (Main + Sidebar) */
+.grid-pro-2-1 {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .grid-pro-2-1 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* === RESPONSIVE GRIDS === */
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+  gap: clamp(1rem, 2vw, 1.5rem);
+}
+
+/* Prevent grid children from overflowing their cells */
+.grid-2 > * {
+  min-width: 0;
+  overflow: hidden;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+  gap: clamp(0.75rem, 2vw, 1.5rem);
+}
+
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+  gap: clamp(0.5rem, 1.5vw, 1rem);
+}
+
+/* Control groups wrapping (generic) */
+.flex.gap-2,
+.control-group,
+.sql-header-row {
+  flex-wrap: wrap;
+  gap: clamp(0.5rem, 1.5vw, 1rem);
+}

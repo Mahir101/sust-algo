@@ -1,0 +1,200 @@
+/**
+ * @module Components.InputPanel
+ * @description Custom user input panel for algorithms.
+ * @layer Components (5)
+ */
+
+/* ===== PHASE 3: INTERACTIVE LEARNING 2.0 (PREMIUM GLASS) ===== */
+
+/* Custom Input Panel */
+.custom-input-panel {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.custom-input-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.custom-input-header h4 {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+  color: var(--text-dark, #cbd5e1);
+  font-weight: 600;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
+/* === RESPONSIVE INPUT FIELDS (GLASS) === */
+.input-field,
+input[type="number"],
+input[type="text"],
+select {
+  min-width: 60px;
+  width: clamp(80px, 15vw, 120px);
+  padding: 0.5rem 0.75rem;
+  font-size: 0.9rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-dark, #e2e8f0);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  outline: none;
+}
+
+.input-field:focus,
+input[type="number"]:focus,
+input[type="text"]:focus,
+select:focus {
+  border-color: rgba(16, 185, 129, 0.5); /* Emerald Tint */
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* Tabs */
+.input-type-tabs {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.input-type-tab {
+  padding: 0.4rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: transparent;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--text-muted, #94a3b8);
+  transition: all 0.2s;
+}
+
+.input-type-tab:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.input-type-tab.active {
+  background: rgba(16, 185, 129, 0.1);
+  color: #34d399;
+  border-color: #10b981;
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.1);
+}
+
+/* Full Width Custom Input */
+.custom-input-field {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.9rem;
+  background: rgba(0, 0, 0, 0.2); /* Darker for input */
+  color: #e2e8f0;
+  transition: all 0.2s;
+  margin-bottom: 0.75rem;
+  outline: none;
+}
+
+.custom-input-field:focus {
+  border-color: #10b981;
+  background: rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+}
+
+/* Apply Context Btn */
+.btn-apply {
+  padding: 0.5rem 1.25rem;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+  background-color: var(--accent-forest, #10b981);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.1);
+}
+
+.btn-apply:hover {
+  background-color: #059669;
+  filter: brightness(1.1);
+  transform: translateY(-1px);
+}
+
+/* Preset Chips */
+.preset-chips {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.75rem;
+}
+
+.preset-chip {
+  padding: 0.35rem 0.85rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: var(--text-dark, #cbd5e1);
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.preset-chip:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: white;
+  transform: translateY(-1px);
+}
+
+/* Old Preset class support */
+.input-preset-btn {
+  padding: 0.35rem 0.85rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  color: var(--text-muted, #94a3b8);
+}
+
+.input-preset-btn:hover {
+  border-color: #10b981;
+  color: #34d399;
+  background: rgba(16, 185, 129, 0.1);
+}
+
+.apply-input-btn {
+  width: 100%;
+  padding: 0.75rem;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+  background-color: var(--accent-forest, #10b981);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.1);
+}
+
+.apply-input-btn:hover {
+  background-color: #059669;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}

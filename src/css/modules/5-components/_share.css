@@ -1,0 +1,75 @@
+/**
+ * @module Components.Share
+ * @description Social sharing components and previews.
+ * @layer Components (5)
+ */
+
+/* Share Panel */
+.share-panel {
+  background: var(--bg-card);
+  border-radius: 20px;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.share-preview {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  border-radius: 16px;
+  padding: 2rem;
+  color: white;
+  margin: 1rem 0;
+}
+
+.share-preview-title {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.share-preview-streak {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.share-preview-stats {
+  font-size: 0.9rem;
+  opacity: 0.9;
+  margin-top: 0.5rem;
+}
+
+.share-buttons {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.share-btn {
+  padding: 0.75rem 1.25rem;
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s;
+}
+
+.share-btn.twitter {
+  background: #1da1f2;
+  color: white;
+}
+
+.share-btn.copy {
+  background: var(--bg-paper);
+  color: var(--text-body);
+}
+
+.share-btn.native {
+  background: var(--accent-forest);
+  color: white;
+}
+
+.share-btn:hover {
+  transform: translateY(-2px);
+}

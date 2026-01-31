@@ -1,0 +1,136 @@
+/**
+ * @module Components.Complexity
+ * @description Complexity analysis tables (Big O).
+ * @layer Components (5)
+ */
+
+.complexity-table {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+}
+
+.complexity-cell {
+  text-align: center;
+  padding: 1rem;
+  background: var(--bg-paper);
+  border-radius: 12px;
+  border: 1px solid var(--border-soft);
+}
+
+.complexity-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.25rem;
+  font-weight: 800;
+}
+
+.complexity-value {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 1.1rem;
+  font-weight: 800;
+}
+
+.complexity-value.good {
+  color: var(--accent-forest);
+}
+
+.complexity-value.medium {
+  color: var(--accent-amber);
+}
+
+
+.complexity-value.bad {
+  color: var(--accent-coral);
+}
+
+/* Light Mode Overrides for Readability */
+:root:not([data-theme="dark"]) .complexity-cell {
+  background: #f1f5f9 !important; /* Light Slate 100 */
+  border-color: #cbd5e1 !important; /* Slate 300 */
+}
+
+:root:not([data-theme="dark"]) .complexity-label {
+  color: #475569 !important; /* Slate 600 */
+  font-weight: 700;
+}
+
+:root:not([data-theme="dark"]) .complexity-value {
+  color: #0f172a; /* Slate 900 (Black) */
+}
+
+:root:not([data-theme="dark"]) .complexity-value.good { color: #059669; } /* Emerald */
+:root:not([data-theme="dark"]) .complexity-value.medium { color: #d97706; } /* Amber */
+:root:not([data-theme="dark"]) .complexity-value.bad { color: #dc2626; } /* Red */
+
+/* Complexity Analyzer */
+.complexity-chart {
+  background: var(--bg-card);
+  border: 2px solid var(--border-soft);
+  border-radius: 16px;
+  padding: 1.25rem;
+  margin: 1rem 0;
+}
+
+.complexity-legend-item span {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+}
+
+/* === RESPONSIVE TABLES === */
+.complexity-table {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(0.5rem, 1vw, 1rem);
+}
+
+.complexity-cell {
+  flex: 1 1 auto;
+  min-width: 80px;
+  padding: clamp(0.5rem, 1.5vw, 1rem);
+}
+
+.complexity-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.complexity-bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.75rem;
+  height: 120px;
+}
+
+.complexity-bar {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.complexity-bar-fill {
+  width: 100%;
+  background: linear-gradient(180deg, var(--accent-forest), var(--accent-sage));
+  border-radius: 4px 4px 0 0;
+  transition: height 0.5s ease;
+}
+
+.complexity-bar-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.complexity-bar-value {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--accent-forest);
+}
